@@ -1,4 +1,4 @@
-@use '../styles/variables' as *;
+@use '../../styles/variables' as *;
 
 .wrap {
   max-width: $max-width;
@@ -26,6 +26,9 @@
 
 .num {
   color: var(--accent);
+  font-size: 13px;
+  vertical-align: middle;
+  margin-right: 14px;
 }
 
 .idx {

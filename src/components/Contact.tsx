@@ -1,19 +1,9 @@
 import { useLocale } from '../hooks/useLocale';
 import { CONTACT_ROWS } from '../i18n/translations';
+import { localise } from '../i18n/localise';
+import { Arrow } from './Arrow';
 import { Reveal } from './Reveal';
 import styles from './Contact.module.scss';
-
-function Arrow() {
-  return (
-    <svg className={styles.arr} width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-      <path d="M3 11L11 3M11 3H4.5M11 3V9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function L(v: string | { fr: string; en: string }, lang: 'fr' | 'en'): string {
-  return typeof v === 'string' ? v : v[lang];
-}
 
 export function Contact() {
   const { locale, t } = useLocale();
@@ -39,8 +29,8 @@ export function Contact() {
           <div className={styles.clinks}>
             {CONTACT_ROWS.filter((r) => r.href).map((r, i) => (
               <a className={styles.clink} key={i} href={r.href} target={r.href.startsWith('mailto') ? undefined : '_blank'} rel="noopener">
-                <span className="mono" style={{ color: 'var(--faint)' }}>{L(r.k, locale)}</span>
-                {r.v}<Arrow />
+                <span className="mono" style={{ color: 'var(--faint)' }}>{localise(r.k, locale)}</span>
+                {r.v}<Arrow className={styles.arr} />
               </a>
             ))}
           </div>

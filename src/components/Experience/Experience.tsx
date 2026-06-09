@@ -1,17 +1,10 @@
-import { useLocale } from '../hooks/useLocale';
-import { EXPERIENCE } from '../i18n/translations';
-import { Reveal } from './Reveal';
+import { useLocale } from '../../hooks/useLocale';
+import { EXPERIENCE } from '../../i18n/translations';
+import { Arrow } from '../Arrow';
+import { Reveal } from '../Reveal';
 import styles from './Experience.module.scss';
 
-function Arrow() {
-  return (
-    <svg className={styles.arr} width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-      <path d="M3 11L11 3M11 3H4.5M11 3V9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-export function Experience() {
+export default function Experience() {
   const { locale, t } = useLocale();
 
   return (
@@ -33,7 +26,7 @@ export function Experience() {
               <div className={`${styles.yr} mono`}>{it.yr}</div>
               <div className={styles.role}>{it.role[locale]}</div>
               {it.url
-                ? <a className={styles.co} href={it.url} target="_blank" rel="noopener">{it.co}<Arrow /></a>
+                ? <a className={styles.co} href={it.url} target="_blank" rel="noopener">{it.co}<Arrow className={styles.arr} /></a>
                 : <div className={styles.co} style={{ color: 'var(--muted)' }}>{it.co}</div>}
               <div className={styles.dsc}>{it.dsc[locale]}</div>
               <div className={styles.tags} style={{ gridColumn: '2' }}>

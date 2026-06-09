@@ -1,15 +1,8 @@
 import { useLocale } from '../hooks/useLocale';
 import { PROJECTS } from '../i18n/translations';
+import { Arrow } from './Arrow';
 import { Reveal } from './Reveal';
 import styles from './Projects.module.scss';
-
-function Arrow() {
-  return (
-    <svg className={styles.arr} width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-      <path d="M3 11L11 3M11 3H4.5M11 3V9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
 
 export function Projects() {
   const { locale, t } = useLocale();
@@ -41,7 +34,7 @@ export function Projects() {
                   </div>
                   <h3>{p.name[locale]}</h3>
                   <div className={styles.blurb}>{p.blurb[locale]}</div>
-                  <span className={styles.go}>{t.viewSite}<Arrow /></span>
+                  <span className={styles.go}>{t.viewSite}<Arrow className={styles.arr} /></span>
                 </a>
               );
             }
@@ -53,7 +46,7 @@ export function Projects() {
                 </div>
                 <h3>{p.name[locale]}</h3>
                 <div className={styles.blurb}>{p.blurb[locale]}</div>
-                <span className={styles.go}>{t.soon}<Arrow /></span>
+                <span className={styles.go}>{t.soon}<Arrow className={styles.arr} /></span>
               </div>
             );
           })}

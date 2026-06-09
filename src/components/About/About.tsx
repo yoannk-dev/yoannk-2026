@@ -1,13 +1,10 @@
-import { useLocale } from '../hooks/useLocale';
-import { ABOUT_BODY, ABOUT_META } from '../i18n/translations';
-import { Reveal } from './Reveal';
+import { useLocale } from '../../hooks/useLocale';
+import { ABOUT_META } from '../../i18n/translations';
+import { localise } from '../../i18n/localise';
+import { Reveal } from '../Reveal';
 import styles from './About.module.scss';
 
-function L(v: string | { fr: string; en: string }, lang: 'fr' | 'en'): string {
-  return typeof v === 'string' ? v : v[lang];
-}
-
-export function About() {
+export default function About() {
   const { locale, t } = useLocale();
 
   return (
@@ -16,7 +13,7 @@ export function About() {
         <Reveal>
           <div className={styles.shead}>
             <h2>
-              <span className={`${styles.num} mono`} style={{ fontSize: 13, verticalAlign: 'middle', marginRight: 14 }}>01</span>
+              <span className={`${styles.num} mono`}>01</span>
               {t.sections.about}
             </h2>
             <span className={`${styles.idx} mono`}>// profile</span>
@@ -26,15 +23,15 @@ export function About() {
         <div className={styles.about}>
           <Reveal>
             <div>
-              {ABOUT_BODY[locale].map((p, i) => <p key={i}>{p}</p>)}
+              {t.aboutBody.map((p, i) => <p key={i}>{p}</p>)}
             </div>
           </Reveal>
 
           <Reveal as="div" d={1} className={styles.meta}>
             {ABOUT_META.map((m, i) => (
               <div className={styles.row} key={i}>
-                <div className={`${styles.mono}`}>{L(m.k, locale)}</div>
-                <div className={styles.v}>{L(m.v, locale)}</div>
+                <div className={`${styles.mono}`}>{localise(m.k, locale)}</div>
+                <div className={styles.v}>{localise(m.v, locale)}</div>
               </div>
             ))}
           </Reveal>

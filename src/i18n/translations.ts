@@ -26,6 +26,7 @@ export const translations = {
     yearsLabel: 'ans d\'expérience',
     rolesLabel: 'entreprises',
     stackLabel: 'stack principale',
+    componentsLabel: 'composants livrés',
     viewSite: 'Voir le site',
     soon: 'Bientôt',
     projectsIntro: 'Des mini-sites et expériences que je construis ici. Chacun ouvrira sa propre page dès qu\'il sera prêt.',
@@ -36,6 +37,10 @@ export const translations = {
     rights: 'Tous droits réservés.',
     themeLight: 'Clair',
     themeDark: 'Sombre',
+    aboutBody: [
+      '15 ans d\'expérience sur des plateformes à fort trafic — immobilier et e-commerce. Expert React & TypeScript, « AI enthusiast », avec une forte sensibilité pour l\'architecture front-end, la performance et l\'expérience utilisateur.',
+      'À l\'aise autant dans un rôle d\'exécution que de leadership technique.',
+    ],
   },
   en: {
     nav: {
@@ -62,6 +67,7 @@ export const translations = {
     yearsLabel: 'years of experience',
     rolesLabel: 'companies',
     stackLabel: 'core stack',
+    componentsLabel: 'components shipped',
     viewSite: 'View site',
     soon: 'Soon',
     projectsIntro: 'Mini-sites and experiments I build here. Each opens its own page once it\'s ready.',
@@ -72,16 +78,20 @@ export const translations = {
     rights: 'All rights reserved.',
     themeLight: 'Light',
     themeDark: 'Dark',
+    aboutBody: [
+      '15 years on high-traffic platforms — real estate and e-commerce. React & TypeScript expert, AI enthusiast, with a strong feel for front-end architecture, performance and user experience.',
+      'Equally at ease executing or leading technically.',
+    ],
   },
 } as const satisfies Record<Locale, object>;
 
 export type Translations = typeof translations.fr | typeof translations.en;
 
 export const STATS = [
-  { n: '15', label: { fr: 'ans d\'expérience', en: 'years of experience' } },
-  { n: '5',  label: { fr: 'entreprises',        en: 'companies' } },
-  { n: '∞',  label: { fr: 'composants livrés',  en: 'components shipped' } },
-];
+  { n: '15', labelKey: 'yearsLabel'      },
+  { n: '5',  labelKey: 'rolesLabel'      },
+  { n: '∞',  labelKey: 'componentsLabel' },
+] as const;
 
 export const KEYWORDS = [
   'React', 'TypeScript', 'Next.js', 'Performance', 'Architecture', 'IA', 'Micro-frontend', 'Design systems',
@@ -163,17 +173,6 @@ export const WRITING = [
   { t: { fr: 'Mesurer (vraiment) la perf React',   en: 'Measuring React performance (for real)' }, tag: 'Performance'  },
   { t: { fr: 'Coder avec l\'IA, pas contre elle',  en: 'Coding with AI, not against it'         }, tag: 'AI'           },
 ];
-
-export const ABOUT_BODY = {
-  fr: [
-    '15 ans d\'expérience sur des plateformes à fort trafic — immobilier et e-commerce. Expert React & TypeScript, « AI enthusiast », avec une forte sensibilité pour l\'architecture front-end, la performance et l\'expérience utilisateur.',
-    'À l\'aise autant dans un rôle d\'exécution que de leadership technique.',
-  ],
-  en: [
-    '15 years on high-traffic platforms — real estate and e-commerce. React & TypeScript expert, AI enthusiast, with a strong feel for front-end architecture, performance and user experience.',
-    'Equally at ease executing or leading technically.',
-  ],
-};
 
 export const ABOUT_META = [
   { k: { fr: 'FORMATION',   en: 'EDUCATION'   }, v: 'M1 Info-Comm · Univ. Nice-Sophia Antipolis' },

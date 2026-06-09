@@ -1,18 +1,12 @@
 import { useEffect, useState } from 'react';
-import { useLocale } from '../hooks/useLocale';
-import { STATS, KEYWORDS } from '../i18n/translations';
+import { useLocale } from '../../hooks/useLocale';
+import { STATS, KEYWORDS } from '../../i18n/translations';
+import { Arrow } from '../Arrow';
 import styles from './Hero.module.scss';
-
-function Arrow({ className = styles.arr }: { className?: string }) {
-  return (
-    <svg className={className} width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-      <path d="M3 11L11 3M11 3H4.5M11 3V9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
 
 function Clock() {
   const [time, setTime] = useState('');
+
   useEffect(() => {
     const tick = () => {
       try {
@@ -43,7 +37,7 @@ function Marquee() {
   );
 }
 
-export function Hero() {
+export default function Hero() {
   const { locale, t } = useLocale();
   const h = t.hero;
 
@@ -70,16 +64,16 @@ export function Hero() {
             </p>
 
             <div className={`${styles.heroFoot} hl a5`}>
-              <a className={styles.btn} href="#contact">{h.contactCta}<Arrow /></a>
-              <a className={`${styles.btn} ${styles.ghost}`} href="https://github.com/yoannk-dev" target="_blank" rel="noopener">GitHub<Arrow /></a>
-              <a className={`${styles.btn} ${styles.ghost}`} href="https://linkedin.com/in/yoannkermet" target="_blank" rel="noopener">LinkedIn<Arrow /></a>
+              <a className={styles.btn} href="#contact">{h.contactCta}<Arrow className={styles.arr} /></a>
+              <a className={`${styles.btn} ${styles.ghost}`} href="https://github.com/yoannk-dev" target="_blank" rel="noopener noreferrer">GitHub<Arrow className={styles.arr} /></a>
+              <a className={`${styles.btn} ${styles.ghost}`} href="https://linkedin.com/in/yoannkermet" target="_blank" rel="noopener noreferrer">LinkedIn<Arrow className={styles.arr} /></a>
             </div>
           </div>
 
           <div className={`${styles.heroside} hl a4`}>
             {STATS.map((s, i) => (
               <div className={styles.blk} key={i}>
-                <div className={`${styles.mono}`}>{s.label[locale]}</div>
+                <div className={`${styles.mono}`}>{t[s.labelKey]}</div>
                 <div className={styles.v}>
                   <span className={styles.big}>{s.n}</span>
                 </div>

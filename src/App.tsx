@@ -2,9 +2,9 @@ import { useTheme } from './hooks/useTheme';
 import { LocaleProvider } from './context/LocaleProvider';
 
 import TopBar from './components/TopBar';
-import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { Experience } from './components/Experience';
+import Hero from './components/Hero';
+import About from './components/About/About';
+import Experience from './components/Experience/Experience';
 import { Stack } from './components/Stack';
 import { Projects } from './components/Projects';
 // import { Writing } from './components/Writing';

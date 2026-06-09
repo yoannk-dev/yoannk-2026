@@ -1,13 +1,6 @@
 import { useLocale } from '../hooks/useLocale';
+import { Arrow } from './Arrow';
 import styles from './Footer.module.scss';
-
-function Arrow() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-      <path d="M3 11L11 3M11 3H4.5M11 3V9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
 
 export function Footer() {
   const { t } = useLocale();
