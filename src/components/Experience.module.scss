@@ -1,4 +1,4 @@
-@import '../styles/variables';
+@use '../styles/variables' as *;
 
 .wrap {
   max-width: $max-width;
@@ -72,12 +72,6 @@
   align-items: center;
   gap: 7px;
   width: fit-content;
-
-  .arr {
-    opacity: 0;
-    transform: translateX(-4px);
-    transition: 0.25s $ease;
-  }
 
   &:hover .arr {
     opacity: 1;

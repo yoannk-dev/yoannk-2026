@@ -1,4 +1,4 @@
-@import '../styles/variables';
+@use '../styles/variables' as *;
 
 .hero {
   padding: 168px 0 0;
@@ -109,10 +109,6 @@
     }
   }
 
-  .arr {
-    transition: transform 0.25s $ease;
-  }
-
   &:hover .arr {
     transform: translate(3px, -3px);
   }
@@ -142,7 +138,7 @@
   color: var(--faint);
   font-family: $font-mono;
   font-size: 12px;
-  letter-spacing: 0.16em;
+  letter-spacing: .15em;
   text-transform: uppercase;
   font-weight: 500;
 }

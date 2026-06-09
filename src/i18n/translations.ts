@@ -6,7 +6,7 @@ export const translations = {
       work: 'Parcours',
       stack: 'Stack',
       projects: 'Projets',
-      writing: 'Écrits',
+      // writing: 'Écrits',
       contact: 'Contact',
     },
     hero: {
@@ -19,7 +19,7 @@ export const translations = {
       work: 'Parcours',
       stack: 'Stack & compétences',
       projects: 'Projets',
-      writing: 'Écrits',
+      // writing: 'Écrits',
       contact: 'Travaillons ensemble',
     },
     now: 'À Paris',

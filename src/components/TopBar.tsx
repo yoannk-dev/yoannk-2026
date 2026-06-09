@@ -47,7 +47,7 @@ export function TopBar({ theme, onThemeToggle }: TopBarProps) {
           <a href="#work">{t.nav.work}</a>
           <a href="#stack">{t.nav.stack}</a>
           <a href="#projects">{t.nav.projects}</a>
-          <a href="#writing">{t.nav.writing}</a>
+          {/* <a href="#writing">{t.nav.writing}</a> */}
           <a href="#contact">{t.nav.contact}</a>
         </nav>
 
