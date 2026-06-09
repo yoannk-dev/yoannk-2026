@@ -1,9 +1,5 @@
 @import '../styles/variables';
 
-.section {
-  position: relative;
-}
-
 .wrap {
   max-width: $max-width;
   margin: 0 auto;
@@ -28,9 +24,8 @@
   }
 }
 
-.idx {
-  color: var(--faint);
-}
+.num { color: var(--accent); }
+.idx { color: var(--faint); }
 
 .stackgrid {
   display: grid;
@@ -58,8 +53,6 @@
   h4 {
     color: var(--accent);
     margin-bottom: 16px;
-    font-size: 16px;
-    font-weight: 600;
   }
 
   ul {

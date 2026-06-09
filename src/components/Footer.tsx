@@ -1,26 +1,26 @@
 import { useLocale } from '../hooks/useLocale';
 import styles from './Footer.module.scss';
 
+function Arrow() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M3 11L11 3M11 3H4.5M11 3V9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 export function Footer() {
   const { t } = useLocale();
-  const currentYear = new Date().getFullYear();
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <footer className={styles.footer}>
       <div className={styles.wrap}>
         <div className={styles.foot}>
-          <div className={styles.copyright}>
-            <span className={styles.mono}>© {currentYear}</span>
-            <span>Yoann Kermet. {t.footer.rights}</span>
-          </div>
-          <button className={styles.totop} onClick={scrollToTop} title={t.footer.backToTop}>
-            {t.footer.backToTop}
-            <span>↑</span>
-          </button>
+          <span className="mono">© {new Date().getFullYear()} Yoann Kermet — {t.rights}</span>
+          <span className="mono" style={{ textTransform: 'none', letterSpacing: '.04em' }}>{t.colophon}</span>
+          <a className={styles.totop} href="#top">
+            <Arrow /> {t.backTop}
+          </a>
         </div>
       </div>
     </footer>

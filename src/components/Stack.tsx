@@ -1,41 +1,34 @@
 import { useLocale } from '../hooks/useLocale';
+import { STACK_GROUPS } from '../i18n/translations';
+import { Reveal } from './Reveal';
 import styles from './Stack.module.scss';
 
-const STACK = {
-  frontend: ['React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'SCSS'],
-  tools: ['Vite', 'Webpack', 'Git', 'VS Code', 'Figma', 'Chrome DevTools'],
-};
-
 export function Stack() {
-  const { t } = useLocale();
-  const s = t.stack;
+  const { locale, t } = useLocale();
 
   return (
-    <section id="stack" className={styles.section}>
+    <section id="stack">
       <div className={styles.wrap}>
-        <div className={styles.shead}>
-          <h2>{s.title}</h2>
-          <span className={styles.idx}>(03)</span>
-        </div>
+        <Reveal>
+          <div className={styles.shead}>
+            <h2>
+              <span className={`${styles.num} mono`} style={{ fontSize: 13, verticalAlign: 'middle', marginRight: 14 }}>03</span>
+              {t.sections.stack}
+            </h2>
+            <span className={`${styles.idx} mono`}>// stack</span>
+          </div>
+        </Reveal>
 
-        <div className={styles.stackgrid}>
-          <div className={styles.cell}>
-            <h4>{s.frontendLabel}</h4>
-            <ul>
-              {STACK.frontend.map((tech) => (
-                <li key={tech}>{tech}</li>
-              ))}
-            </ul>
-          </div>
-          <div className={styles.cell}>
-            <h4>{s.toolsLabel}</h4>
-            <ul>
-              {STACK.tools.map((tool) => (
-                <li key={tool}>{tool}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <Reveal as="div" d={1} className={styles.stackgrid}>
+          {STACK_GROUPS.map((g, i) => (
+            <div className={styles.cell} key={i}>
+              <h4 className="mono">{typeof g.h === 'string' ? g.h : g.h[locale]}</h4>
+              <ul>
+                {g.items.map((x) => <li key={x}>{x}</li>)}
+              </ul>
+            </div>
+          ))}
+        </Reveal>
       </div>
     </section>
   );

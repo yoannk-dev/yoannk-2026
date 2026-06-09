@@ -1,7 +1,7 @@
 @import '../styles/variables';
 
 .section {
-  position: relative;
+  padding-bottom: 40px;
 }
 
 .wrap {
@@ -28,13 +28,8 @@
   }
 }
 
-.idx {
-  color: var(--faint);
-}
-
-.contact {
-  padding-bottom: 40px;
-}
+.num { color: var(--accent); }
+.idx { color: var(--faint); }
 
 .lead {
   color: var(--muted);
@@ -43,7 +38,7 @@
 }
 
 .big {
-  font-size: clamp(40px, 8vw, 104px);
+  font-size: clamp(28px, 8vw, 104px);
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 0.95;
@@ -52,7 +47,6 @@
     position: relative;
     display: inline-block;
     color: var(--ink);
-    transition: color 0.2s;
 
     &::after {
       content: '';
@@ -67,10 +61,8 @@
       transition: transform 0.45s $ease;
     }
 
-    &:hover {
-      &::after {
-        transform: scaleX(1);
-      }
+    &:hover::after {
+      transform: scaleX(1);
     }
   }
 }
@@ -102,7 +94,6 @@
 
 .arr {
   opacity: 0.4;
-  transition: opacity 0.2s;
 
   .clink:hover & {
     opacity: 1;

@@ -7,27 +7,44 @@ interface TopBarProps {
   onThemeToggle: () => void;
 }
 
+function SunIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round">
+      <circle cx="12" cy="12" r="4.2" />
+      <path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7" />
+    </svg>
+  );
+}
+
+function MoonIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20 14.5A8 8 0 119.5 4a6.3 6.3 0 0010.5 10.5z" />
+    </svg>
+  );
+}
+
 export function TopBar({ theme, onThemeToggle }: TopBarProps) {
-  const { locale, toggle: toggleLocale, t } = useLocale();
+  const { locale, setLocale, t } = useLocale();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 0);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const on = () => setIsScrolled(window.scrollY > 12);
+    on();
+    window.addEventListener('scroll', on, { passive: true });
+    return () => window.removeEventListener('scroll', on);
   }, []);
 
   return (
-    <div className={`${styles.bar} ${isScrolled ? styles.scrolled : ''}`}>
+    <header className={`${styles.bar} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.barIn}>
-        <div className={styles.brand}>
-          <div className={styles.dot} />
-          YK
-        </div>
+        <a href="#top" className={styles.brand}>
+          <span className={styles.dot} />
+          Yoann&nbsp;Kermet
+        </a>
 
         <nav className={styles.nav}>
-          <a href="#about">{t.nav.about}</a>
-          <a href="#experience">{t.nav.experience}</a>
+          <a href="#work">{t.nav.work}</a>
           <a href="#stack">{t.nav.stack}</a>
           <a href="#projects">{t.nav.projects}</a>
           <a href="#writing">{t.nav.writing}</a>
@@ -35,34 +52,27 @@ export function TopBar({ theme, onThemeToggle }: TopBarProps) {
         </nav>
 
         <div className={styles.controls}>
-          <div className={styles.langSwitch}>
-            <button
-              className={locale === 'fr' ? styles.langActive : ''}
-              onClick={() => locale !== 'fr' && toggleLocale()}
-              aria-label="Français"
-            >
-              FR
-            </button>
-            <span className={styles.langSlash}>/</span>
-            <button
-              className={locale === 'en' ? styles.langActive : ''}
-              onClick={() => locale !== 'en' && toggleLocale()}
-              aria-label="English"
-            >
-              EN
-            </button>
+          <div className={styles.seg}>
+            {(['fr', 'en'] as const).map((l) => (
+              <button
+                key={l}
+                className={locale === l ? styles.on : ''}
+                onClick={() => setLocale(l)}
+              >
+                {l.toUpperCase()}
+              </button>
+            ))}
           </div>
 
           <button
             className={styles.tbtn}
-            onClick={onThemeToggle}
             aria-label="Toggle theme"
-            title={theme === 'dark' ? 'Light mode' : 'Dark mode'}
+            onClick={onThemeToggle}
           >
-            {theme === 'dark' ? '☀️' : '🌙'}
+            {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
           </button>
         </div>
       </div>
-    </div>
+    </header>
   );
 }

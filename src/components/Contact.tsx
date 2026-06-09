@@ -1,45 +1,50 @@
 import { useLocale } from '../hooks/useLocale';
+import { CONTACT_ROWS } from '../i18n/translations';
+import { Reveal } from './Reveal';
 import styles from './Contact.module.scss';
 
-const LINKS = [
-  { label: 'Email', href: 'mailto:y.kermet@gmail.com', icon: '✉' },
-  { label: 'LinkedIn', href: '#', icon: '💼' },
-  { label: 'GitHub', href: '#', icon: '⚙' },
-  { label: 'Twitter', href: '#', icon: '𝕏' },
-];
+function Arrow() {
+  return (
+    <svg className={styles.arr} width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M3 11L11 3M11 3H4.5M11 3V9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function L(v: string | { fr: string; en: string }, lang: 'fr' | 'en'): string {
+  return typeof v === 'string' ? v : v[lang];
+}
 
 export function Contact() {
-  const { t } = useLocale();
-  const c = t.contact;
+  const { locale, t } = useLocale();
 
   return (
     <section id="contact" className={styles.section}>
       <div className={styles.wrap}>
-        <div className={styles.shead}>
-          <h2>{c.title}</h2>
-          <span className={styles.idx}>(06)</span>
-        </div>
-
-        <div className={styles.contact}>
-          <p className={styles.lead}>{c.lead}</p>
-          <div className={styles.big}>
-            <a href="mailto:y.kermet@gmail.com">y.kermet@gmail.com</a>
+        <Reveal>
+          <div className={styles.shead}>
+            <h2>
+              <span className={`${styles.num} mono`} style={{ fontSize: 13, verticalAlign: 'middle', marginRight: 14 }}>06</span>
+              {t.sections.contact}
+            </h2>
+            <span className={`${styles.idx} mono`}>// contact</span>
           </div>
+        </Reveal>
 
+        <Reveal>
+          <div className={styles.lead}>{t.contactLead}</div>
+          <div className={styles.big}>
+            <a href="mailto:yoannk.dev@gmail.com">yoannk.dev@gmail.com</a>
+          </div>
           <div className={styles.clinks}>
-            {LINKS.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className={styles.clink}
-                title={link.label}
-              >
-                {link.icon} {link.label}
-                <span className={styles.arr}>↗</span>
+            {CONTACT_ROWS.filter((r) => r.href).map((r, i) => (
+              <a className={styles.clink} key={i} href={r.href} target={r.href.startsWith('mailto') ? undefined : '_blank'} rel="noopener">
+                <span className="mono" style={{ color: 'var(--faint)' }}>{L(r.k, locale)}</span>
+                {r.v}<Arrow />
               </a>
             ))}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

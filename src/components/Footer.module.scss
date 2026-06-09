@@ -21,22 +21,6 @@
   color: var(--muted);
 }
 
-.copyright {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  font-size: 15px;
-}
-
-.mono {
-  color: var(--faint);
-  font-family: $font-mono;
-  font-size: 12px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
 .totop {
   display: inline-flex;
   align-items: center;
@@ -44,11 +28,6 @@
   cursor: pointer;
   color: var(--ink);
   transition: 0.2s;
-  background: transparent;
-  border: none;
-  font-family: inherit;
-  font-size: 15px;
-  font-weight: 500;
 
   &:hover {
     color: var(--accent-ink);

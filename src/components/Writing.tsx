@@ -1,31 +1,37 @@
 import { useLocale } from '../hooks/useLocale';
+import { WRITING } from '../i18n/translations';
+import { Reveal } from './Reveal';
 import styles from './Writing.module.scss';
 
 export function Writing() {
-  const { t } = useLocale();
-  const w = t.writing;
+  const { locale, t } = useLocale();
 
   return (
-    <section id="writing" className={styles.section}>
+    <section id="writing">
       <div className={styles.wrap}>
-        <div className={styles.shead}>
-          <h2>{w.title}</h2>
-          <span className={styles.idx}>(05)</span>
-        </div>
+        <Reveal>
+          <div className={styles.shead}>
+            <h2>
+              <span className={`${styles.num} mono`} style={{ fontSize: 13, verticalAlign: 'middle', marginRight: 14 }}>05</span>
+              {t.sections.writing}
+            </h2>
+            <span className={`${styles.idx} mono`}>// writing</span>
+          </div>
+        </Reveal>
 
-        <p className={styles.pintro}>{w.intro}</p>
+        <Reveal as="p" d={1} className={styles.pintro}>{t.writingIntro}</Reveal>
 
-        <div className={styles.wlist}>
-          {w.items.map((article, idx) => (
-            <div key={idx} className={styles.wrow}>
-              <div className={styles.t}>{article.title}</div>
+        <Reveal as="div" d={1} className={styles.wlist}>
+          {WRITING.map((w, i) => (
+            <div className={styles.wrow} key={i}>
+              <div className={styles.t}>{w.t[locale]}</div>
               <div className={styles.metaR}>
-                <span>{article.date}</span>
-                <span>{article.readTime}</span>
+                <span className={styles.tag}>{w.tag}</span>
+                <span className="mono">{t.soon}</span>
               </div>
             </div>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

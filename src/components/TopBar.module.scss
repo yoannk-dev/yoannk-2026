@@ -43,17 +43,12 @@
   background: var(--accent);
   box-shadow: 0 0 0 0 var(--accent);
   animation: pulse 2.6s $ease infinite;
+  flex-shrink: 0;
 
   @keyframes pulse {
-    0% {
-      box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 55%, transparent);
-    }
-    70% {
-      box-shadow: 0 0 0 7px transparent;
-    }
-    100% {
-      box-shadow: 0 0 0 0 transparent;
-    }
+    0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 55%, transparent); }
+    70%  { box-shadow: 0 0 0 7px transparent; }
+    100% { box-shadow: 0 0 0 0 transparent; }
   }
 }
 
@@ -83,16 +78,11 @@
 
     &:hover {
       color: var(--ink);
-
-      &::after {
-        transform: scaleX(1);
-      }
+      &::after { transform: scaleX(1); }
     }
   }
 
-  @media (max-width: 780px) {
-    display: none;
-  }
+  @media (max-width: 780px) { display: none; }
 }
 
 .controls {
@@ -101,38 +91,27 @@
   gap: 8px;
 }
 
-.langSwitch {
+.seg {
   display: flex;
-  align-items: center;
-  gap: 1px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
 
   button {
+    font-family: $font-mono;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    padding: 7px 12px;
     background: transparent;
-    border: none;
+    color: var(--muted);
+    border: 0;
     cursor: pointer;
-    padding: 5px 6px;
-    border-radius: 4px;
-    color: var(--faint);
-    transition: color 0.2s;
-    line-height: 1;
+    transition: 0.2s;
 
-    &:hover {
-      color: var(--ink);
+    &.on {
+      background: var(--ink);
+      color: var(--paper);
     }
-  }
-
-  .langActive {
-    color: var(--ink);
-    cursor: default;
-  }
-
-  .langSlash {
-    color: var(--line-strong);
-    font-weight: 400;
-    user-select: none;
   }
 }
 
@@ -147,10 +126,14 @@
   display: grid;
   place-items: center;
   transition: 0.25s;
-  font-size: 18px;
 
   &:hover {
     border-color: var(--line-strong);
     transform: translateY(-1px);
+  }
+
+  svg {
+    width: 17px;
+    height: 17px;
   }
 }

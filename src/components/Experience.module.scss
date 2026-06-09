@@ -1,9 +1,5 @@
 @import '../styles/variables';
 
-.section {
-  position: relative;
-}
-
 .wrap {
   max-width: $max-width;
   margin: 0 auto;
@@ -28,13 +24,8 @@
   }
 }
 
-.idx {
-  color: var(--faint);
-}
-
-.xpContainer {
-  border-top: 1px solid var(--line);
-}
+.num { color: var(--accent); }
+.idx { color: var(--faint); }
 
 .xpRow {
   display: grid;
@@ -60,17 +51,11 @@
 
 .yr {
   color: var(--muted);
-  font-size: 14px;
 
   @media (min-width: $bp-desktop) {
-    grid-row: 1/4;
+    grid-row: 1 / 5;
     padding-top: 6px;
   }
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
 }
 
 .role {
@@ -87,15 +72,6 @@
   align-items: center;
   gap: 7px;
   width: fit-content;
-  margin-top: 4px;
-
-  a {
-    transition: opacity 0.2s;
-
-    &:hover {
-      opacity: 0.7;
-    }
-  }
 
   .arr {
     opacity: 0;
@@ -109,12 +85,17 @@
   }
 }
 
+.arr {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: 0.25s $ease;
+}
+
 .dsc {
   color: var(--muted);
   max-width: 70ch;
   margin-top: 6px;
   line-height: 1.5;
-  font-size: 15px;
 }
 
 .tags {
@@ -132,5 +113,4 @@
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--muted);
-  text-transform: uppercase;
 }

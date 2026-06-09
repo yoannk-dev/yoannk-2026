@@ -5,11 +5,13 @@ import type { Locale } from './translations';
 export type LocaleContextValue = {
   locale: Locale;
   toggle: () => void;
+  setLocale: (l: Locale) => void;
   t: Translations;
 };
 
 export const LocaleContext = createContext<LocaleContextValue>({
   locale: 'fr',
   toggle: () => {},
+  setLocale: () => {},
   t: translations.fr,
 });

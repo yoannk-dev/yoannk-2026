@@ -1,9 +1,5 @@
 @import '../styles/variables';
 
-.section {
-  position: relative;
-}
-
 .wrap {
   max-width: $max-width;
   margin: 0 auto;
@@ -28,9 +24,8 @@
   }
 }
 
-.idx {
-  color: var(--faint);
-}
+.num { color: var(--accent); }
+.idx { color: var(--faint); }
 
 .pintro {
   color: var(--muted);
@@ -75,6 +70,15 @@
   align-items: center;
   gap: 18px;
   color: var(--faint);
-  font-size: 14px;
   white-space: nowrap;
+}
+
+.tag {
+  font-family: $font-mono;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 6px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
 }

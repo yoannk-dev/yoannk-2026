@@ -1,194 +1,189 @@
 export type Locale = 'en' | 'fr';
 
 export const translations = {
+  fr: {
+    nav: {
+      work: 'Parcours',
+      stack: 'Stack',
+      projects: 'Projets',
+      writing: 'Écrits',
+      contact: 'Contact',
+    },
+    hero: {
+      role: 'Senior Front-End Engineer',
+      available: 'Disponible pour de nouveaux projets',
+      contactCta: 'Écrivez-moi',
+    },
+    sections: {
+      about: 'Profil',
+      work: 'Parcours',
+      stack: 'Stack & compétences',
+      projects: 'Projets',
+      writing: 'Écrits',
+      contact: 'Travaillons ensemble',
+    },
+    now: 'À Paris',
+    yearsLabel: 'ans d\'expérience',
+    rolesLabel: 'entreprises',
+    stackLabel: 'stack principale',
+    viewSite: 'Voir le site',
+    soon: 'Bientôt',
+    projectsIntro: 'Des mini-sites et expériences que je construis ici. Chacun ouvrira sa propre page dès qu\'il sera prêt.',
+    writingIntro: 'Des notes sur le front-end, la performance, l\'architecture et l\'IA. Premiers articles à venir.',
+    contactLead: 'Une idée, un poste, un café ?',
+    backTop: 'Haut de page',
+    colophon: 'Conçu & codé à Paris. Space Grotesk + JetBrains Mono.',
+    rights: 'Tous droits réservés.',
+    themeLight: 'Clair',
+    themeDark: 'Sombre',
+  },
   en: {
     nav: {
-      about: 'About',
-      experience: 'Experience',
+      work: 'Work',
       stack: 'Stack',
       projects: 'Projects',
       writing: 'Writing',
       contact: 'Contact',
     },
     hero: {
-      available: 'Available for work',
-      statementPre: 'Senior',
-      statementBold: 'Front-End Engineer',
-      statementPost: 'based in Paris.',
-      statementLine2: '15 years building fast, accessible web interfaces with',
-      cta: 'Get in touch',
-      seeWork: 'See my work',
-      expLabel: 'Experience',
-      expValue: 'years in frontend',
-      stackLabel: 'Stack',
+      role: 'Senior Front-End Engineer',
+      available: 'Available for new projects',
+      contactCta: 'Get in touch',
     },
-    about: {
-      title: 'About',
-      p1: "I'm a frontend engineer with 15 years of experience crafting intuitive, performant web interfaces. I specialize in React and TypeScript, focusing on clean code, accessibility, and user experience.",
-      p2: 'Currently based in Paris, I work with teams to solve complex frontend challenges and deliver pixel-perfect implementations that scale.',
-      locationLabel: 'Location',
-      emailLabel: 'Email',
-      availableLabel: 'Available',
-      availableValue: 'For new opportunities',
+    sections: {
+      about: 'Profile',
+      work: 'Experience',
+      stack: 'Stack & skills',
+      projects: 'Projects',
+      writing: 'Writing',
+      contact: 'Let\'s work together',
     },
-    experience: {
-      title: 'Experience',
-      items: [
-        {
-          years: '2021–Present',
-          role: 'Senior Frontend Engineer',
-          company: 'Tech Startup Inc.',
-          description: 'Leading frontend architecture and mentoring junior engineers on React best practices.',
-          tags: ['React', 'TypeScript', 'Vite', 'SCSS'],
-        },
-        {
-          years: '2018–2021',
-          role: 'Frontend Engineer',
-          company: 'Digital Agency Co.',
-          description: 'Developed responsive web applications and optimized performance for 100k+ users.',
-          tags: ['React', 'JavaScript', 'CSS-in-JS', 'Testing'],
-        },
-        {
-          years: '2015–2018',
-          role: 'Junior Frontend Developer',
-          company: 'Web Design Studio',
-          description: 'Built interactive UI components and maintained legacy systems during migration to React.',
-          tags: ['HTML5', 'CSS3', 'jQuery', 'Bootstrap'],
-        },
-      ],
-    },
-    stack: {
-      title: 'Stack',
-      frontendLabel: 'Frontend',
-      toolsLabel: 'Tools & Dev',
-    },
-    projects: {
-      title: 'Projects',
-      viewProject: 'View project',
-      items: [
-        { title: 'Design System', description: 'Comprehensive component library for internal use' },
-        { title: 'E-Commerce Platform', description: 'Modern storefront with real-time inventory' },
-        { title: 'Analytics Dashboard', description: 'Real-time metrics visualization and reporting' },
-        { title: 'Mobile App', description: 'Cross-platform mobile application' },
-        { title: 'CMS Platform', description: 'Headless CMS with API-first approach' },
-        { title: 'Video Streaming', description: 'Adaptive bitrate streaming platform' },
-      ],
-    },
-    writing: {
-      title: 'Writing',
-      intro: 'Thoughts on frontend engineering, design systems, and web performance.',
-      readTime: 'min',
-      items: [
-        { title: 'Building Performant React Applications', date: 'March 2024', readTime: '8 min' },
-        { title: 'CSS Grid vs Flexbox: When to Use What', date: 'February 2024', readTime: '5 min' },
-        { title: 'Accessibility-First Design Principles', date: 'January 2024', readTime: '7 min' },
-        { title: 'TypeScript Patterns for Large Codebases', date: 'December 2023', readTime: '10 min' },
-      ],
-    },
-    contact: {
-      title: 'Get in touch',
-      lead: "Let's work together on your next project.",
-    },
-    footer: {
-      rights: 'All rights reserved.',
-      backToTop: 'Back to top',
-    },
-    marquee: ['React', 'TypeScript', 'JavaScript', 'Frontend', 'Web Design', 'CSS', 'Performance', 'Accessibility'],
-  },
-  fr: {
-    nav: {
-      about: 'À propos',
-      experience: 'Expérience',
-      stack: 'Stack',
-      projects: 'Projets',
-      writing: 'Articles',
-      contact: 'Contact',
-    },
-    hero: {
-      available: 'Disponible',
-      statementPre: 'Ingénieur',
-      statementBold: 'Front-End Senior',
-      statementPost: 'basé à Paris.',
-      statementLine2: '15 ans à concevoir des interfaces web rapides et accessibles avec',
-      cta: 'Me contacter',
-      seeWork: 'Voir mes projets',
-      expLabel: 'Expérience',
-      expValue: 'ans en frontend',
-      stackLabel: 'Stack',
-    },
-    about: {
-      title: 'À propos',
-      p1: "Ingénieur frontend avec 15 ans d'expérience dans la conception d'interfaces web intuitives et performantes. Je me spécialise en React et TypeScript, avec un focus sur la qualité du code, l'accessibilité et l'expérience utilisateur.",
-      p2: "Basé à Paris, je collabore avec des équipes pour résoudre des défis frontend complexes et livrer des implémentations pixel-perfect qui passent à l'échelle.",
-      locationLabel: 'Localisation',
-      emailLabel: 'Email',
-      availableLabel: 'Disponible',
-      availableValue: 'Pour de nouvelles opportunités',
-    },
-    experience: {
-      title: 'Expérience',
-      items: [
-        {
-          years: '2021–Présent',
-          role: 'Ingénieur Frontend Senior',
-          company: 'Tech Startup Inc.',
-          description: "Direction de l'architecture frontend et accompagnement des ingénieurs juniors sur les bonnes pratiques React.",
-          tags: ['React', 'TypeScript', 'Vite', 'SCSS'],
-        },
-        {
-          years: '2018–2021',
-          role: 'Ingénieur Frontend',
-          company: 'Digital Agency Co.',
-          description: "Développement d'applications web responsives et optimisation des performances pour plus de 100 000 utilisateurs.",
-          tags: ['React', 'JavaScript', 'CSS-in-JS', 'Testing'],
-        },
-        {
-          years: '2015–2018',
-          role: 'Développeur Frontend Junior',
-          company: 'Web Design Studio',
-          description: "Conception de composants UI interactifs et maintenance de systèmes legacy lors de la migration vers React.",
-          tags: ['HTML5', 'CSS3', 'jQuery', 'Bootstrap'],
-        },
-      ],
-    },
-    stack: {
-      title: 'Stack',
-      frontendLabel: 'Frontend',
-      toolsLabel: 'Outils & Dev',
-    },
-    projects: {
-      title: 'Projets',
-      viewProject: 'Voir le projet',
-      items: [
-        { title: 'Design System', description: 'Bibliothèque de composants complète pour usage interne' },
-        { title: 'Plateforme E-Commerce', description: 'Boutique moderne avec inventaire en temps réel' },
-        { title: 'Dashboard Analytics', description: 'Visualisation et reporting de métriques en temps réel' },
-        { title: 'Application Mobile', description: 'Application mobile multiplateforme' },
-        { title: 'Plateforme CMS', description: 'CMS headless avec approche API-first' },
-        { title: 'Streaming Vidéo', description: 'Plateforme de streaming à débit adaptatif' },
-      ],
-    },
-    writing: {
-      title: 'Articles',
-      intro: 'Réflexions sur le développement frontend, les design systems et la performance web.',
-      readTime: 'min',
-      items: [
-        { title: 'Créer des applications React performantes', date: 'Mars 2024', readTime: '8 min' },
-        { title: 'CSS Grid vs Flexbox : quand utiliser quoi', date: 'Février 2024', readTime: '5 min' },
-        { title: "L'accessibilité comme principe de conception", date: 'Janvier 2024', readTime: '7 min' },
-        { title: 'Patterns TypeScript pour de grandes codebases', date: 'Décembre 2023', readTime: '10 min' },
-      ],
-    },
-    contact: {
-      title: 'Me contacter',
-      lead: 'Travaillons ensemble sur votre prochain projet.',
-    },
-    footer: {
-      rights: 'Tous droits réservés.',
-      backToTop: 'Haut de page',
-    },
-    marquee: ['React', 'TypeScript', 'JavaScript', 'Frontend', 'Web Design', 'CSS', 'Performance', 'Accessibilité'],
+    now: 'In Paris',
+    yearsLabel: 'years of experience',
+    rolesLabel: 'companies',
+    stackLabel: 'core stack',
+    viewSite: 'View site',
+    soon: 'Soon',
+    projectsIntro: 'Mini-sites and experiments I build here. Each opens its own page once it\'s ready.',
+    writingIntro: 'Notes on front-end, performance, architecture and AI. First articles coming soon.',
+    contactLead: 'An idea, a role, a coffee?',
+    backTop: 'Back to top',
+    colophon: 'Designed & coded in Paris. Space Grotesk + JetBrains Mono.',
+    rights: 'All rights reserved.',
+    themeLight: 'Light',
+    themeDark: 'Dark',
   },
 } as const;
 
-export type Translations = typeof translations.en;
+export type Translations = typeof translations.fr | typeof translations.en;
+
+export const STATS = [
+  { n: '15', label: { fr: 'ans d\'expérience', en: 'years of experience' } },
+  { n: '5',  label: { fr: 'entreprises',        en: 'companies' } },
+  { n: '∞',  label: { fr: 'composants livrés',  en: 'components shipped' } },
+];
+
+export const KEYWORDS = [
+  'React', 'TypeScript', 'Next.js', 'Performance', 'Architecture', 'IA', 'Micro-frontend', 'Design systems',
+];
+
+export const EXPERIENCE = [
+  {
+    yr: '2023 — 2026',
+    role: { fr: 'Senior Frontend Engineer', en: 'Senior Frontend Engineer' },
+    co: 'Groupe SeLoger · AVIV Group',
+    url: 'https://myselogerpro.com',
+    dsc: {
+      fr: 'Lead frontend de l\'équipe Portfolio (MySeLoger Pro) — la console de gestion des biens pour les pros de l\'immobilier. Architecture micro-frontend, nouvelles features, mentorat de juniors, guilde IA',
+      en: 'Frontend lead of the Portfolio team (MySeLoger Pro) — the property-management console for real-estate pros. Micro-frontend architecture, junior mentoring, AI tooling integration.',
+    },
+    tags: ['React', 'Angular', 'TypeScript', 'Micro-frontend', 'Testing Library', 'Webpack'],
+  },
+  {
+    yr: '2022 — 2023',
+    role: { fr: 'Frontend Engineer', en: 'Frontend Engineer' },
+    co: 'Drouot Immobilier',
+    url: 'https://drouot.immo',
+    dsc: {
+      fr: 'Plateforme d\'enchères immobilières en temps réel, développée from scratch : interface d\'enchères live (WebSockets) et moteur de recherche avancé.',
+      en: 'Real-time real-estate auction platform built from scratch: live bidding UI (WebSockets) and an advanced search engine.',
+    },
+    tags: ['React', 'Next.js', 'TypeScript', 'WebSockets', 'E2E'],
+  },
+  {
+    yr: '2020 — 2022',
+    role: { fr: 'Co-fondateur & Lead Full-Stack freelance', en: 'Co-founder & Lead Full-Stack' },
+    co: 'One More Time',
+    url: '',
+    dsc: {
+      fr: 'Plateforme e-commerce de vêtements vintage. WordPress/WooCommerce headless, GraphQL, intégrations Algolia & Stripe, front Vue/Nuxt. + prestations freelance en parallèle.',
+      en: 'Vintage clothing e-commerce platform. Headless WordPress/WooCommerce, GraphQL, Algolia & Stripe integrations, Vue/Nuxt front-end. + parallel freelance work.',
+    },
+    tags: ['Vue', 'Nuxt', 'GraphQL', 'Algolia', 'Stripe', 'Headless WP'],
+  },
+  {
+    yr: '2014 — 2020',
+    role: { fr: 'Frontend Engineer & Product Manager', en: 'Frontend Engineer & Product Manager' },
+    co: 'Birchbox / Blissim',
+    url: 'https://blissim.fr',
+    dsc: {
+      fr: 'Responsable frontend : évolutions produit, intégrations marketing & éditoriales, management de l\'équipe front. PM de 2018 à 2020 : roadmaps trimestrielles, user stories, coordination design/dev/data.',
+      en: 'Frontend lead: product evolutions, marketing & editorial integrations, managing the front-end team. PM 2018–2020: quarterly roadmaps, user stories, design/dev/data coordination.',
+    },
+    tags: ['React', 'WordPress', 'jQuery', 'Product'],
+  },
+  {
+    yr: '2008 — 2014',
+    role: { fr: 'Frontend Engineer', en: 'Frontend Engineer' },
+    co: 'Brainsonic · Digital Brotherhood · AF83',
+    url: '',
+    dsc: {
+      fr: 'Premières années en agence digitale : intégration, projets clients à fort trafic, fondations du métier.',
+      en: 'Early agency years: integration, high-traffic client projects, learning the craft from the ground up.',
+    },
+    tags: ['JavaScript', 'HTML', 'CSS'],
+  },
+];
+
+export const STACK_GROUPS = [
+  { h: { fr: 'Core',          en: 'Core'          }, items: ['React', 'TypeScript', 'JavaScript', 'HTML', 'CSS'] },
+  { h: { fr: 'Frameworks',    en: 'Frameworks'    }, items: ['Next.js', 'Angular', 'Vue', 'Nuxt'] },
+  { h: { fr: 'Architecture',  en: 'Architecture'  }, items: ['Front-end architecture', 'Micro-frontend', 'Performance web', 'WebSockets'] },
+  { h: { fr: 'Au-delà du code', en: 'Beyond code' }, items: ['Coding assisté par IA', 'Mentorat & leadership', 'Vision produit (ex-PM)', 'Testing & E2E'] },
+];
+
+export const PROJECTS = [
+  { name: { fr: 'Projet 01', en: 'Project 01' }, blurb: { fr: 'Expérience à venir', en: 'Experiment coming soon' }, href: '' },
+  { name: { fr: 'Projet 02', en: 'Project 02' }, blurb: { fr: 'Expérience à venir', en: 'Experiment coming soon' }, href: '' },
+  { name: { fr: 'Projet 03', en: 'Project 03' }, blurb: { fr: 'Expérience à venir', en: 'Experiment coming soon' }, href: '' },
+];
+
+export const WRITING = [
+  { t: { fr: 'Micro-frontends sans la douleur',    en: 'Micro-frontends without the pain'      }, tag: 'Architecture' },
+  { t: { fr: 'Mesurer (vraiment) la perf React',   en: 'Measuring React performance (for real)' }, tag: 'Performance'  },
+  { t: { fr: 'Coder avec l\'IA, pas contre elle',  en: 'Coding with AI, not against it'         }, tag: 'AI'           },
+];
+
+export const ABOUT_BODY = {
+  fr: [
+    '15 ans d\'expérience sur des plateformes à fort trafic — immobilier et e-commerce. Expert React & TypeScript, « AI enthusiast », avec une forte sensibilité pour l\'architecture front-end, la performance et l\'expérience utilisateur.',
+    'À l\'aise autant dans un rôle d\'exécution que de leadership technique.',
+  ],
+  en: [
+    '15 years on high-traffic platforms — real estate and e-commerce. React & TypeScript expert, AI enthusiast, with a strong feel for front-end architecture, performance and user experience.',
+    'Equally at ease executing or leading technically.',
+  ],
+};
+
+export const ABOUT_META = [
+  { k: { fr: 'FORMATION',   en: 'EDUCATION'   }, v: 'M1 Info-Comm · Univ. Nice-Sophia Antipolis' },
+  { k: { fr: 'DISTINCTION', en: 'AWARD'        }, v: 'UX Awards 2016 · Best mobile journey' },
+  { k: { fr: 'LANGUES',     en: 'LANGUAGES'    }, v: { fr: 'Français (natif) · Anglais (pro)', en: 'French (native) · English (pro)' } },
+];
+
+export const CONTACT_ROWS = [
+  { k: 'EMAIL',                         v: 'yoannk.dev@gmail.com',    href: 'mailto:yoannk.dev@gmail.com' },
+  { k: { fr: 'LIEU', en: 'BASED' },    v: 'Paris, Île-de-France',  href: '' },
+  { k: 'LINKEDIN',                      v: 'in/yoannkermet',        href: 'https://linkedin.com/in/yoannkermet' },
+  { k: 'GITHUB',                        v: 'yoannk-dev',            href: 'https://github.com/yoannk-dev' },
+];

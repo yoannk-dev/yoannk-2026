@@ -1,40 +1,43 @@
 import { useLocale } from '../hooks/useLocale';
+import { ABOUT_BODY, ABOUT_META } from '../i18n/translations';
+import { Reveal } from './Reveal';
 import styles from './About.module.scss';
 
+function L(v: string | { fr: string; en: string }, lang: 'fr' | 'en'): string {
+  return typeof v === 'string' ? v : v[lang];
+}
+
 export function About() {
-  const { t } = useLocale();
-  const a = t.about;
+  const { locale, t } = useLocale();
 
   return (
-    <section id="about" className={styles.section}>
+    <section id="about">
       <div className={styles.wrap}>
-        <div className={styles.shead}>
-          <h2>{a.title}</h2>
-          <span className={styles.idx}>(01)</span>
-        </div>
+        <Reveal>
+          <div className={styles.shead}>
+            <h2>
+              <span className={`${styles.num} mono`} style={{ fontSize: 13, verticalAlign: 'middle', marginRight: 14 }}>01</span>
+              {t.sections.about}
+            </h2>
+            <span className={`${styles.idx} mono`}>// profile</span>
+          </div>
+        </Reveal>
 
         <div className={styles.about}>
-          <div>
-            <p>{a.p1}</p>
-            <p>{a.p2}</p>
-          </div>
+          <Reveal>
+            <div>
+              {ABOUT_BODY[locale].map((p, i) => <p key={i}>{p}</p>)}
+            </div>
+          </Reveal>
 
-          <div className={styles.meta}>
-            <div className={styles.row}>
-              <div className={styles.mono}>{a.locationLabel}</div>
-              <div className={styles.v}>Paris, France</div>
-            </div>
-            <div className={styles.row}>
-              <div className={styles.mono}>{a.emailLabel}</div>
-              <div className={styles.v}>
-                <a href="mailto:y.kermet@gmail.com">y.kermet@gmail.com</a>
+          <Reveal as="div" d={1} className={styles.meta}>
+            {ABOUT_META.map((m, i) => (
+              <div className={styles.row} key={i}>
+                <div className={`${styles.mono}`}>{L(m.k, locale)}</div>
+                <div className={styles.v}>{L(m.v, locale)}</div>
               </div>
-            </div>
-            <div className={styles.row}>
-              <div className={styles.mono}>{a.availableLabel}</div>
-              <div className={styles.v}>{a.availableValue}</div>
-            </div>
-          </div>
+            ))}
+          </Reveal>
         </div>
       </div>
     </section>

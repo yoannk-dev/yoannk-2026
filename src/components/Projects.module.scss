@@ -1,9 +1,5 @@
 @import '../styles/variables';
 
-.section {
-  position: relative;
-}
-
 .wrap {
   max-width: $max-width;
   margin: 0 auto;
@@ -28,8 +24,14 @@
   }
 }
 
-.idx {
-  color: var(--faint);
+.num { color: var(--accent); }
+.idx { color: var(--faint); }
+
+.pintro {
+  color: var(--muted);
+  max-width: 60ch;
+  margin-bottom: 30px;
+  font-size: 18px;
 }
 
 .cards {
@@ -100,7 +102,6 @@
 
 .blurb {
   color: var(--muted);
-  font-size: 16px;
 }
 
 .go {
@@ -110,19 +111,10 @@
   color: var(--ink);
   opacity: 0.35;
   font-size: 14px;
-  transition: opacity 0.25s $ease;
+}
 
-  a {
-    transition: color 0.2s;
-
-    &:hover {
-      color: var(--accent-ink);
-    }
-  }
-
-  .arr {
-    transition: transform 0.25s $ease;
-  }
+.arr {
+  transition: transform 0.25s $ease;
 }
 
 .live {
