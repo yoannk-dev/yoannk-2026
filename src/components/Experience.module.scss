@@ -1,0 +1,136 @@
+@import '../styles/variables';
+
+.section {
+  position: relative;
+}
+
+.wrap {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $gutter;
+}
+
+.shead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 96px;
+  margin-bottom: 44px;
+  flex-wrap: wrap;
+
+  h2 {
+    font-size: clamp(30px, 5vw, 58px);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--ink);
+  }
+}
+
+.idx {
+  color: var(--faint);
+}
+
+.xpContainer {
+  border-top: 1px solid var(--line);
+}
+
+.xpRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  padding: 30px 0;
+  border-top: 1px solid var(--line);
+  transition: padding 0.3s $ease;
+
+  &:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+
+  @media (min-width: $bp-desktop) {
+    grid-template-columns: 170px 1fr;
+    gap: 0 40px;
+
+    &:hover {
+      padding-left: 8px;
+    }
+  }
+}
+
+.yr {
+  color: var(--muted);
+  font-size: 14px;
+
+  @media (min-width: $bp-desktop) {
+    grid-row: 1/4;
+    padding-top: 6px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.role {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--ink);
+}
+
+.co {
+  color: var(--accent-ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  width: fit-content;
+  margin-top: 4px;
+
+  a {
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .arr {
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: 0.25s $ease;
+  }
+
+  &:hover .arr {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.dsc {
+  color: var(--muted);
+  max-width: 70ch;
+  margin-top: 6px;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.tag {
+  font-family: $font-mono;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 6px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  text-transform: uppercase;
+}

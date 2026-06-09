@@ -1,0 +1,110 @@
+@import '../styles/variables';
+
+.section {
+  position: relative;
+}
+
+.wrap {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $gutter;
+}
+
+.shead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 96px;
+  margin-bottom: 44px;
+  flex-wrap: wrap;
+
+  h2 {
+    font-size: clamp(30px, 5vw, 58px);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--ink);
+  }
+}
+
+.idx {
+  color: var(--faint);
+}
+
+.contact {
+  padding-bottom: 40px;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+
+.big {
+  font-size: clamp(40px, 8vw, 104px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+
+  a {
+    position: relative;
+    display: inline-block;
+    color: var(--ink);
+    transition: color 0.2s;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0.06em;
+      height: 3px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.45s $ease;
+    }
+
+    &:hover {
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+.clinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 40px;
+}
+
+.clink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-size: 15px;
+  transition: 0.25s $ease;
+  white-space: nowrap;
+  color: var(--ink);
+
+  &:hover {
+    border-color: var(--ink);
+    transform: translateY(-2px);
+  }
+}
+
+.arr {
+  opacity: 0.4;
+  transition: opacity 0.2s;
+
+  .clink:hover & {
+    opacity: 1;
+  }
+}

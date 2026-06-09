@@ -1,0 +1,80 @@
+@import '../styles/variables';
+
+.section {
+  position: relative;
+}
+
+.wrap {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $gutter;
+}
+
+.shead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 96px;
+  margin-bottom: 44px;
+  flex-wrap: wrap;
+
+  h2 {
+    font-size: clamp(30px, 5vw, 58px);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--ink);
+  }
+}
+
+.idx {
+  color: var(--faint);
+}
+
+.pintro {
+  color: var(--muted);
+  max-width: 60ch;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.wlist {
+  border-top: 1px solid var(--line);
+}
+
+.wrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+  transition: padding 0.3s $ease;
+  cursor: default;
+
+  &:hover {
+    padding-left: 8px;
+  }
+}
+
+.t {
+  font-size: clamp(20px, 2.6vw, 28px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  transition: color 0.2s;
+
+  .wrow:hover & {
+    color: var(--accent-ink);
+  }
+}
+
+.metaR {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: var(--faint);
+  font-size: 14px;
+  white-space: nowrap;
+}

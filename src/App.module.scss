@@ -1,4 +1,25 @@
-@use './styles/variables' as *;
+@import './styles/variables';
 
-.root {
+.app {
+  --paper: #{$dark-paper};
+  --raise: #{$dark-raise};
+  --ink: #{$dark-ink};
+  --muted: #{$dark-muted};
+  --faint: #{$dark-faint};
+  --line: #{$dark-line};
+  --line-strong: #{$dark-line-strong};
+  --accent: #{$dark-accent};
+  --accent-ink: #{$dark-accent-ink};
+
+  &[data-theme='light'] {
+    --paper: #{$light-paper};
+    --raise: #{$light-raise};
+    --ink: #{$light-ink};
+    --muted: #{$light-muted};
+    --faint: #{$light-faint};
+    --line: #{$light-line};
+    --line-strong: #{$light-line-strong};
+    --accent: #{$light-accent};
+    --accent-ink: #{$light-accent-ink};
+  }
 }

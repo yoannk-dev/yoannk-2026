@@ -1,0 +1,37 @@
+/* Design Tokens */
+
+$font-sans: 'Space Grotesk', system-ui, sans-serif;
+$font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+/* Light theme */
+$light-paper: #F1EFE9;
+$light-raise: #F8F6F1;
+$light-ink: #15120E;
+$light-muted: #736C61;
+$light-faint: #A39B8E;
+$light-line: rgba(21, 18, 14, 0.13);
+$light-line-strong: rgba(21, 18, 14, 0.26);
+$light-accent: #E8401F;
+$light-accent-ink: #E8401F;
+
+/* Dark theme */
+$dark-paper: #0C0C0E;
+$dark-raise: #141416;
+$dark-ink: #ECEAE3;
+$dark-muted: #928C82;
+$dark-faint: #5E5950;
+$dark-line: rgba(236, 234, 227, 0.14);
+$dark-line-strong: rgba(236, 234, 227, 0.28);
+$dark-accent: #FF5A33;
+$dark-accent-ink: #FF6A45;
+
+/* Layout */
+$max-width: 1180px;
+$gutter: 32px;
+$ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+/* Breakpoints */
+$bp-mobile: 680px;
+$bp-tablet: 760px;
+$bp-desktop: 820px;
+$bp-wide: 900px;
