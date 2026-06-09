@@ -27,11 +27,11 @@ export default function About() {
             </div>
           </Reveal>
 
-          <Reveal as="div" d={1} className={styles.meta}>
-            {ABOUT_META.map((m, i) => (
+          <Reveal as="div" delay={1} className={styles.meta}>
+            {ABOUT_META.map((item, i) => (
               <div className={styles.row} key={i}>
-                <div className={`${styles.mono}`}>{localise(m.k, locale)}</div>
-                <div className={styles.v}>{localise(m.v, locale)}</div>
+                <div className={`${styles.mono}`}>{localise(item.label, locale)}</div>
+                <div className={styles.v}>{localise(item.value, locale)}</div>
               </div>
             ))}
           </Reveal>

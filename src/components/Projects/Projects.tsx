@@ -20,20 +20,20 @@ export default function Projects() {
           </div>
         </Reveal>
 
-        <Reveal as="p" d={1} className={styles.pintro}>{t.projectsIntro}</Reveal>
+        <Reveal as="p" delay={1} className={styles.pintro}>{t.projectsIntro}</Reveal>
 
-        <Reveal as="div" d={1} className={styles.cards}>
-          {PROJECTS.map((p, i) => {
-            const live = !!p.href;
+        <Reveal as="div" delay={1} className={styles.cards}>
+          {PROJECTS.map((project, i) => {
+            const live = !!project.href;
             if (live) {
               return (
-                <a className={`${styles.card} ${styles.live}`} key={i} href={p.href}>
+                <a className={`${styles.card} ${styles.live}`} key={i} href={project.href}>
                   <div className={styles.top}>
                     <span className={styles.n}>{String(i + 1).padStart(2, '0')}</span>
                     <span className={styles.badge}>Live</span>
                   </div>
-                  <h3>{p.name[locale]}</h3>
-                  <div className={styles.blurb}>{p.blurb[locale]}</div>
+                  <h3>{project.name[locale]}</h3>
+                  <div className={styles.blurb}>{project.blurb[locale]}</div>
                   <span className={styles.go}>{t.viewSite}<Arrow className={styles.arr} /></span>
                 </a>
               );
@@ -44,8 +44,8 @@ export default function Projects() {
                   <span className={styles.n}>{String(i + 1).padStart(2, '0')}</span>
                   <span className={styles.badge}>{t.soon}</span>
                 </div>
-                <h3>{p.name[locale]}</h3>
-                <div className={styles.blurb}>{p.blurb[locale]}</div>
+                <h3>{project.name[locale]}</h3>
+                <div className={styles.blurb}>{project.blurb[locale]}</div>
                 <span className={styles.go}>{t.soon}<Arrow className={styles.arr} /></span>
               </div>
             );

@@ -19,12 +19,12 @@ export default function Stack() {
           </div>
         </Reveal>
 
-        <Reveal as="div" d={1} className={styles.stackgrid}>
-          {STACK_GROUPS.map((g, i) => (
+        <Reveal as="div" delay={1} className={styles.stackgrid}>
+          {STACK_GROUPS.map((group, i) => (
             <div className={styles.cell} key={i}>
-              <h4 className="mono">{typeof g.h === 'string' ? g.h : g.h[locale]}</h4>
+              <h4 className="mono">{typeof group.heading === 'string' ? group.heading : group.heading[locale]}</h4>
               <ul>
-                {g.items.map((x) => <li key={x}>{x}</li>)}
+                {group.items.map((skill) => <li key={skill}>{skill}</li>)}
               </ul>
             </div>
           ))}

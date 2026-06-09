@@ -5,7 +5,7 @@ import { Arrow } from '../Arrow';
 import { Reveal } from '../Reveal';
 import styles from './Contact.module.scss';
 
-const emailRow = CONTACT_ROWS.find((r) => r.k === 'EMAIL')!;
+const emailRow = CONTACT_ROWS.find((row) => row.label === 'EMAIL')!;
 
 export default function Contact() {
   const { locale, t } = useLocale();
@@ -26,13 +26,13 @@ export default function Contact() {
         <Reveal>
           <div className={styles.lead}>{t.contactLead}</div>
           <div className={styles.big}>
-            <a href={emailRow.href}>{emailRow.v}</a>
+            <a href={emailRow.href}>{emailRow.value}</a>
           </div>
           <div className={styles.clinks}>
-            {CONTACT_ROWS.filter((r) => r.href).map((r, i) => (
-              <a className={styles.clink} key={i} href={r.href} target={r.href.startsWith('mailto') ? undefined : '_blank'} rel="noopener noreferrer">
-                <span className="mono" style={{ color: 'var(--faint)' }}>{localise(r.k, locale)}</span>
-                {r.v}<Arrow className={styles.arr} />
+            {CONTACT_ROWS.filter((row) => row.href).map((row, i) => (
+              <a className={styles.clink} key={i} href={row.href} target={row.href.startsWith('mailto') ? undefined : '_blank'} rel="noopener noreferrer">
+                <span className="mono" style={{ color: 'var(--faint)' }}>{localise(row.label, locale)}</span>
+                {row.value}<Arrow className={styles.arr} />
               </a>
             ))}
           </div>

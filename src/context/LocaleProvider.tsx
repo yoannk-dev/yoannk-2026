@@ -9,9 +9,9 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
     return (localStorage.getItem('yk-lang') as Locale) || 'fr';
   });
 
-  const setLocale = (l: Locale) => {
-    setLocaleState(l);
-    localStorage.setItem('yk-lang', l);
+  const setLocale = (newLocale: Locale) => {
+    setLocaleState(newLocale);
+    localStorage.setItem('yk-lang', newLocale);
   };
 
   const toggle = () => setLocale(locale === 'fr' ? 'en' : 'fr');

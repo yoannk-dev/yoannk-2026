@@ -28,18 +28,18 @@ function Clock() {
 }
 
 function Marquee() {
-  const mk = (prefix: string) =>
-    KEYWORDS.map((k, i) => <span className={styles.kw} key={prefix + i}>{k}</span>);
+  const renderKeywords = (prefix: string) =>
+    KEYWORDS.map((keyword, i) => <span className={styles.kw} key={prefix + i}>{keyword}</span>);
   return (
     <div className={styles.marquee} aria-hidden="true">
-      <div className={styles.track}>{mk('a')}{mk('b')}</div>
+      <div className={styles.track}>{renderKeywords('a')}{renderKeywords('b')}</div>
     </div>
   );
 }
 
 export default function Hero() {
   const { locale, t } = useLocale();
-  const h = t.hero;
+  const hero = t.hero;
 
   return (
     <section className={styles.hero} id="top">
@@ -47,9 +47,9 @@ export default function Hero() {
         <div className={styles.heroGrid}>
           <div>
             <div className={`${styles.eyebrow} hl a1 mono`}>
-              <span>{h.role}</span>
+              <span>{hero.role}</span>
               <span>·</span>
-              <span className={styles.av}><i className={styles.online} />{h.available}</span>
+              <span className={styles.av}><i className={styles.online} />{hero.available}</span>
             </div>
 
             <h1 className={styles.name}>
@@ -64,18 +64,18 @@ export default function Hero() {
             </p>
 
             <div className={`${styles.heroFoot} hl a5`}>
-              <a className={styles.btn} href="#contact">{h.contactCta}<Arrow className={styles.arr} /></a>
+              <a className={styles.btn} href="#contact">{hero.contactCta}<Arrow className={styles.arr} /></a>
               <a className={`${styles.btn} ${styles.ghost}`} href="https://github.com/yoannk-dev" target="_blank" rel="noopener noreferrer">GitHub<Arrow className={styles.arr} /></a>
               <a className={`${styles.btn} ${styles.ghost}`} href="https://linkedin.com/in/yoannkermet" target="_blank" rel="noopener noreferrer">LinkedIn<Arrow className={styles.arr} /></a>
             </div>
           </div>
 
           <div className={`${styles.heroside} hl a4`}>
-            {STATS.map((s, i) => (
+            {STATS.map((stat, i) => (
               <div className={styles.blk} key={i}>
-                <div className={`${styles.mono}`}>{t[s.labelKey]}</div>
+                <div className={`${styles.mono}`}>{t[stat.labelKey]}</div>
                 <div className={styles.v}>
-                  <span className={styles.big}>{s.n}</span>
+                  <span className={styles.big}>{stat.value}</span>
                 </div>
               </div>
             ))}

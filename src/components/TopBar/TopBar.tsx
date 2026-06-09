@@ -29,10 +29,10 @@ export default function TopBar({ theme, onThemeToggle }: TopBarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const on = () => setIsScrolled(window.scrollY > 12);
-    on();
-    window.addEventListener('scroll', on, { passive: true });
-    return () => window.removeEventListener('scroll', on);
+    const handleScroll = () => setIsScrolled(window.scrollY > 12);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -53,13 +53,13 @@ export default function TopBar({ theme, onThemeToggle }: TopBarProps) {
 
         <div className={styles.controls}>
           <div className={styles.seg}>
-            {(['fr', 'en'] as const).map((l) => (
+            {(['fr', 'en'] as const).map((lang) => (
               <button
-                key={l}
-                className={locale === l ? styles.on : ''}
-                onClick={() => setLocale(l)}
+                key={lang}
+                className={locale === lang ? styles.on : ''}
+                onClick={() => setLocale(lang)}
               >
-                {l.toUpperCase()}
+                {lang.toUpperCase()}
               </button>
             ))}
           </div>

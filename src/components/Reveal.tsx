@@ -2,13 +2,13 @@ import { useEffect, useRef, type ElementType, type ReactNode } from 'react';
 
 interface RevealProps {
   as?: ElementType;
-  d?: number;
+  delay?: number;
   className?: string;
   style?: React.CSSProperties;
   children: ReactNode;
 }
 
-export function Reveal({ as: Tag = 'div', d = 0, className = '', style, children }: RevealProps) {
+export function Reveal({ as: Tag = 'div', delay = 0, className = '', style, children }: RevealProps) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const ref = useRef<any>(null);
 
@@ -16,22 +16,22 @@ export function Reveal({ as: Tag = 'div', d = 0, className = '', style, children
     const el = ref.current as HTMLElement | null;
     if (!el) return;
     el.classList.add('reveal');
-    if (d) el.classList.add('d' + d);
-    const io = new IntersectionObserver(
+    if (delay) el.classList.add('d' + delay);
+    const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add('in');
-            io.unobserve(e.target);
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
     );
-    io.observe(el);
-    const fb = setTimeout(() => el.classList.add('in'), 1600);
-    return () => { io.disconnect(); clearTimeout(fb); };
-  }, [d]);
+    observer.observe(el);
+    const fallbackTimer = setTimeout(() => el.classList.add('in'), 1600);
+    return () => { observer.disconnect(); clearTimeout(fallbackTimer); };
+  }, [delay]);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const AnyTag = Tag as any;

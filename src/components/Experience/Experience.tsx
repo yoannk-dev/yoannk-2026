@@ -21,16 +21,16 @@ export default function Experience() {
         </Reveal>
 
         <div>
-          {EXPERIENCE.map((it, i) => (
-            <Reveal as="article" className={styles.xpRow} key={i} d={Math.min(i + 1, 4) as 1 | 2 | 3 | 4}>
-              <div className={`${styles.yr} mono`}>{it.yr}</div>
-              <div className={styles.role}>{it.role[locale]}</div>
-              {it.url
-                ? <a className={styles.co} href={it.url} target="_blank" rel="noopener">{it.co}<Arrow className={styles.arr} /></a>
-                : <div className={styles.co} style={{ color: 'var(--muted)' }}>{it.co}</div>}
-              <div className={styles.dsc}>{it.dsc[locale]}</div>
+          {EXPERIENCE.map((job, i) => (
+            <Reveal as="article" className={styles.xpRow} key={i} delay={Math.min(i + 1, 4) as 1 | 2 | 3 | 4}>
+              <div className={`${styles.yr} mono`}>{job.period}</div>
+              <div className={styles.role}>{job.role[locale]}</div>
+              {job.url
+                ? <a className={styles.co} href={job.url} target="_blank" rel="noopener">{job.company}<Arrow className={styles.arr} /></a>
+                : <div className={styles.co} style={{ color: 'var(--muted)' }}>{job.company}</div>}
+              <div className={styles.dsc}>{job.description[locale]}</div>
               <div className={styles.tags} style={{ gridColumn: '2' }}>
-                {it.tags.map((tag) => (
+                {job.tags.map((tag) => (
                   <span key={tag} className={styles.tag}>{tag}</span>
                 ))}
               </div>

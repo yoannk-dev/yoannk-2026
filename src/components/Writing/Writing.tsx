@@ -19,14 +19,14 @@ export function Writing() {
           </div>
         </Reveal>
 
-        <Reveal as="p" d={1} className={styles.pintro}>{t.writingIntro}</Reveal>
+        <Reveal as="p" delay={1} className={styles.pintro}>{t.writingIntro}</Reveal>
 
-        <Reveal as="div" d={1} className={styles.wlist}>
-          {WRITING.map((w, i) => (
+        <Reveal as="div" delay={1} className={styles.wlist}>
+          {WRITING.map((article, i) => (
             <div className={styles.wrow} key={i}>
-              <div className={styles.t}>{w.t[locale]}</div>
+              <div className={styles.t}>{article.title[locale]}</div>
               <div className={styles.metaR}>
-                <span className={styles.tag}>{w.tag}</span>
+                <span className={styles.tag}>{article.tag}</span>
                 <span className="mono">{t.soon}</span>
               </div>
             </div>

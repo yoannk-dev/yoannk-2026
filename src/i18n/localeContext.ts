@@ -5,7 +5,7 @@ import type { Locale } from '../types/locale';
 export type LocaleContextValue = {
   locale: Locale;
   toggle: () => void;
-  setLocale: (l: Locale) => void;
+  setLocale: (newLocale: Locale) => void;
   t: Translations;
 };
 

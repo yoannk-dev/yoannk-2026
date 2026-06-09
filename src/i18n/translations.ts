@@ -88,9 +88,9 @@ export const translations = {
 export type Translations = typeof translations.fr | typeof translations.en;
 
 export const STATS = [
-  { n: '15', labelKey: 'yearsLabel'      },
-  { n: '5',  labelKey: 'rolesLabel'      },
-  { n: '∞',  labelKey: 'componentsLabel' },
+  { value: '15', labelKey: 'yearsLabel'      },
+  { value: '5',  labelKey: 'rolesLabel'      },
+  { value: '∞',  labelKey: 'componentsLabel' },
 ] as const;
 
 export const KEYWORDS = [
@@ -99,55 +99,55 @@ export const KEYWORDS = [
 
 export const EXPERIENCE = [
   {
-    yr: '2023 — 2026',
+    period: '2023 — 2026',
     role: { fr: 'Senior Frontend Engineer', en: 'Senior Frontend Engineer' },
-    co: 'Groupe SeLoger · AVIV Group',
+    company: 'Groupe SeLoger · AVIV Group',
     url: 'https://myselogerpro.com',
-    dsc: {
+    description: {
       fr: 'Lead frontend de l\'équipe Portfolio (MySeLoger Pro) — la console de gestion des biens pour les pros de l\'immobilier. Architecture micro-frontend, nouvelles features, mentorat de juniors, guilde IA',
       en: 'Frontend lead of the Portfolio team (MySeLoger Pro) — the property-management console for real-estate pros. Micro-frontend architecture, junior mentoring, AI tooling integration.',
     },
     tags: ['React', 'Angular', 'TypeScript', 'Micro-frontend', 'Testing Library', 'Webpack'],
   },
   {
-    yr: '2022 — 2023',
+    period: '2022 — 2023',
     role: { fr: 'Frontend Engineer', en: 'Frontend Engineer' },
-    co: 'Drouot Immobilier',
+    company: 'Drouot Immobilier',
     url: 'https://drouot.immo',
-    dsc: {
+    description: {
       fr: 'Plateforme d\'enchères immobilières en temps réel, développée from scratch : interface d\'enchères live (WebSockets) et moteur de recherche avancé.',
       en: 'Real-time real-estate auction platform built from scratch: live bidding UI (WebSockets) and an advanced search engine.',
     },
     tags: ['React', 'Next.js', 'TypeScript', 'WebSockets', 'E2E'],
   },
   {
-    yr: '2020 — 2022',
+    period: '2020 — 2022',
     role: { fr: 'Co-fondateur & Lead Full-Stack freelance', en: 'Co-founder & Lead Full-Stack' },
-    co: 'One More Time',
+    company: 'One More Time',
     url: '',
-    dsc: {
+    description: {
       fr: 'Plateforme e-commerce de vêtements vintage. WordPress/WooCommerce headless, GraphQL, intégrations Algolia & Stripe, front Vue/Nuxt. + prestations freelance en parallèle.',
       en: 'Vintage clothing e-commerce platform. Headless WordPress/WooCommerce, GraphQL, Algolia & Stripe integrations, Vue/Nuxt front-end. + parallel freelance work.',
     },
     tags: ['Vue', 'Nuxt', 'GraphQL', 'Algolia', 'Stripe', 'Headless WP'],
   },
   {
-    yr: '2014 — 2020',
+    period: '2014 — 2020',
     role: { fr: 'Frontend Engineer & Product Manager', en: 'Frontend Engineer & Product Manager' },
-    co: 'Birchbox / Blissim',
+    company: 'Birchbox / Blissim',
     url: 'https://blissim.fr',
-    dsc: {
+    description: {
       fr: 'Responsable frontend : évolutions produit, intégrations marketing & éditoriales, management de l\'équipe front. PM de 2018 à 2020 : roadmaps trimestrielles, user stories, coordination design/dev/data.',
       en: 'Frontend lead: product evolutions, marketing & editorial integrations, managing the front-end team. PM 2018–2020: quarterly roadmaps, user stories, design/dev/data coordination.',
     },
     tags: ['React', 'WordPress', 'jQuery', 'Product'],
   },
   {
-    yr: '2008 — 2014',
+    period: '2008 — 2014',
     role: { fr: 'Frontend Engineer', en: 'Frontend Engineer' },
-    co: 'Brainsonic · Digital Brotherhood · AF83',
+    company: 'Brainsonic · Digital Brotherhood · AF83',
     url: '',
-    dsc: {
+    description: {
       fr: 'Premières années en agence digitale : intégration, projets clients à fort trafic, fondations du métier.',
       en: 'Early agency years: integration, high-traffic client projects, learning the craft from the ground up.',
     },
@@ -156,10 +156,10 @@ export const EXPERIENCE = [
 ];
 
 export const STACK_GROUPS = [
-  { h: { fr: 'Core',          en: 'Core'          }, items: ['React', 'TypeScript', 'JavaScript', 'HTML', 'CSS'] },
-  { h: { fr: 'Frameworks',    en: 'Frameworks'    }, items: ['Next.js', 'Angular', 'Vue', 'Nuxt'] },
-  { h: { fr: 'Architecture',  en: 'Architecture'  }, items: ['Front-end architecture', 'Micro-frontend', 'Performance web', 'WebSockets'] },
-  { h: { fr: 'Au-delà du code', en: 'Beyond code' }, items: ['Coding assisté par IA', 'Mentorat & leadership', 'Vision produit (ex-PM)', 'Testing & E2E'] },
+  { heading: { fr: 'Core',          en: 'Core'          }, items: ['React', 'TypeScript', 'JavaScript', 'HTML', 'CSS'] },
+  { heading: { fr: 'Frameworks',    en: 'Frameworks'    }, items: ['Next.js', 'Angular', 'Vue', 'Nuxt'] },
+  { heading: { fr: 'Architecture',  en: 'Architecture'  }, items: ['Front-end architecture', 'Micro-frontend', 'Performance web', 'WebSockets'] },
+  { heading: { fr: 'Au-delà du code', en: 'Beyond code' }, items: ['Coding assisté par IA', 'Mentorat & leadership', 'Vision produit (ex-PM)', 'Testing & E2E'] },
 ];
 
 export const PROJECTS = [
@@ -169,20 +169,20 @@ export const PROJECTS = [
 ];
 
 export const WRITING = [
-  { t: { fr: 'Micro-frontends sans la douleur',    en: 'Micro-frontends without the pain'      }, tag: 'Architecture' },
-  { t: { fr: 'Mesurer (vraiment) la perf React',   en: 'Measuring React performance (for real)' }, tag: 'Performance'  },
-  { t: { fr: 'Coder avec l\'IA, pas contre elle',  en: 'Coding with AI, not against it'         }, tag: 'AI'           },
+  { title: { fr: 'Micro-frontends sans la douleur',    en: 'Micro-frontends without the pain'      }, tag: 'Architecture' },
+  { title: { fr: 'Mesurer (vraiment) la perf React',   en: 'Measuring React performance (for real)' }, tag: 'Performance'  },
+  { title: { fr: 'Coder avec l\'IA, pas contre elle',  en: 'Coding with AI, not against it'         }, tag: 'AI'           },
 ];
 
 export const ABOUT_META = [
-  { k: { fr: 'FORMATION',   en: 'EDUCATION'   }, v: 'M1 Info-Comm · Univ. Nice-Sophia Antipolis' },
-  { k: { fr: 'DISTINCTION', en: 'AWARD'        }, v: 'UX Awards 2016 · Best mobile journey' },
-  { k: { fr: 'LANGUES',     en: 'LANGUAGES'    }, v: { fr: 'Français (natif) · Anglais (pro)', en: 'French (native) · English (pro)' } },
+  { label: { fr: 'FORMATION',   en: 'EDUCATION'   }, value: 'M1 Info-Comm · Univ. Nice-Sophia Antipolis' },
+  { label: { fr: 'DISTINCTION', en: 'AWARD'        }, value: 'UX Awards 2016 · Best mobile journey' },
+  { label: { fr: 'LANGUES',     en: 'LANGUAGES'    }, value: { fr: 'Français (natif) · Anglais (pro)', en: 'French (native) · English (pro)' } },
 ];
 
 export const CONTACT_ROWS = [
-  { k: 'EMAIL',                         v: 'yoannk.dev@gmail.com',    href: 'mailto:yoannk.dev@gmail.com' },
-  { k: { fr: 'LIEU', en: 'BASED' },    v: 'Paris, Île-de-France',  href: '' },
-  { k: 'LINKEDIN',                      v: 'in/yoannkermet',        href: 'https://linkedin.com/in/yoannkermet' },
-  { k: 'GITHUB',                        v: 'yoannk-dev',            href: 'https://github.com/yoannk-dev' },
+  { label: 'EMAIL',                         value: 'yoannk.dev@gmail.com',    href: 'mailto:yoannk.dev@gmail.com' },
+  { label: { fr: 'LIEU', en: 'BASED' },    value: 'Paris, Île-de-France',  href: '' },
+  { label: 'LINKEDIN',                      value: 'in/yoannkermet',        href: 'https://linkedin.com/in/yoannkermet' },
+  { label: 'GITHUB',                        value: 'yoannk-dev',            href: 'https://github.com/yoannk-dev' },
 ];
