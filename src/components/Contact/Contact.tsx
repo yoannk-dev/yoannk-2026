@@ -1,11 +1,13 @@
-import { useLocale } from '../hooks/useLocale';
-import { CONTACT_ROWS } from '../i18n/translations';
-import { localise } from '../i18n/localise';
-import { Arrow } from './Arrow';
-import { Reveal } from './Reveal';
+import { useLocale } from '../../hooks/useLocale';
+import { CONTACT_ROWS } from '../../i18n/translations';
+import { localise } from '../../i18n/localise';
+import { Arrow } from '../Arrow';
+import { Reveal } from '../Reveal';
 import styles from './Contact.module.scss';
 
-export function Contact() {
+const emailRow = CONTACT_ROWS.find((r) => r.k === 'EMAIL')!;
+
+export default function Contact() {
   const { locale, t } = useLocale();
 
   return (
@@ -24,11 +26,11 @@ export function Contact() {
         <Reveal>
           <div className={styles.lead}>{t.contactLead}</div>
           <div className={styles.big}>
-            <a href="mailto:yoannk.dev@gmail.com">yoannk.dev@gmail.com</a>
+            <a href={emailRow.href}>{emailRow.v}</a>
           </div>
           <div className={styles.clinks}>
             {CONTACT_ROWS.filter((r) => r.href).map((r, i) => (
-              <a className={styles.clink} key={i} href={r.href} target={r.href.startsWith('mailto') ? undefined : '_blank'} rel="noopener">
+              <a className={styles.clink} key={i} href={r.href} target={r.href.startsWith('mailto') ? undefined : '_blank'} rel="noopener noreferrer">
                 <span className="mono" style={{ color: 'var(--faint)' }}>{localise(r.k, locale)}</span>
                 {r.v}<Arrow className={styles.arr} />
               </a>

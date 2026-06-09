@@ -1,8 +1,8 @@
-import { useLocale } from '../hooks/useLocale';
-import { Arrow } from './Arrow';
+import { useLocale } from '../../hooks/useLocale';
+import { Arrow } from '../Arrow';
 import styles from './Footer.module.scss';
 
-export function Footer() {
+export default function Footer() {
   const { t } = useLocale();
 
   return (

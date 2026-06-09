@@ -5,11 +5,11 @@ import TopBar from './components/TopBar';
 import Hero from './components/Hero';
 import About from './components/About/About';
 import Experience from './components/Experience/Experience';
-import { Stack } from './components/Stack';
-import { Projects } from './components/Projects';
+import Stack from './components/Stack/Stack';
+import Projects from './components/Projects/Projects';
 // import { Writing } from './components/Writing';
-import { Contact } from './components/Contact';
-import { Footer } from './components/Footer';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
 
 import styles from './App.module.scss';
 

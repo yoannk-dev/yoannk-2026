@@ -1,9 +1,9 @@
-import { useLocale } from '../hooks/useLocale';
-import { STACK_GROUPS } from '../i18n/translations';
-import { Reveal } from './Reveal';
+import { useLocale } from '../../hooks/useLocale';
+import { STACK_GROUPS } from '../../i18n/translations';
+import { Reveal } from '../Reveal';
 import styles from './Stack.module.scss';
 
-export function Stack() {
+export default function Stack() {
   const { locale, t } = useLocale();
 
   return (

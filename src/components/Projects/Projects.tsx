@@ -1,10 +1,10 @@
-import { useLocale } from '../hooks/useLocale';
-import { PROJECTS } from '../i18n/translations';
-import { Arrow } from './Arrow';
-import { Reveal } from './Reveal';
+import { useLocale } from '../../hooks/useLocale';
+import { PROJECTS } from '../../i18n/translations';
+import { Arrow } from '../Arrow';
+import { Reveal } from '../Reveal';
 import styles from './Projects.module.scss';
 
-export function Projects() {
+export default function Projects() {
   const { locale, t } = useLocale();
 
   return (

@@ -1,6 +1,6 @@
-import { useLocale } from '../hooks/useLocale';
-import { WRITING } from '../i18n/translations';
-import { Reveal } from './Reveal';
+import { useLocale } from '../../hooks/useLocale';
+import { WRITING } from '../../i18n/translations';
+import { Reveal } from '../Reveal';
 import styles from './Writing.module.scss';
 
 export function Writing() {
@@ -13,7 +13,7 @@ export function Writing() {
           <div className={styles.shead}>
             <h2>
               <span className={`${styles.num} mono`} style={{ fontSize: 13, verticalAlign: 'middle', marginRight: 14 }}>05</span>
-              {t.sections.writing}
+              {/* {t.sections.writing} */}
             </h2>
             <span className={`${styles.idx} mono`}>// writing</span>
           </div>
