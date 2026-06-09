@@ -1,5 +1,6 @@
 import { useTheme } from './hooks/useTheme';
 import { useScrollReveal } from './hooks/useScrollReveal';
+import { LocaleProvider } from './context/LocaleProvider';
 import { TopBar } from './components/TopBar';
 import { Hero } from './components/Hero';
 import { Marquee } from './components/Marquee';
@@ -17,17 +18,19 @@ export default function App() {
   useScrollReveal();
 
   return (
-    <div className={styles.app} data-theme={theme}>
-      <TopBar theme={theme} onThemeToggle={toggle} />
-      <Hero />
-      <Marquee />
-      <About />
-      <Experience />
-      <Stack />
-      <Projects />
-      <Writing />
-      <Contact />
-      <Footer />
-    </div>
+    <LocaleProvider>
+      <div className={styles.app} data-theme={theme}>
+        <TopBar theme={theme} onThemeToggle={toggle} />
+        <Hero />
+        <Marquee />
+        <About />
+        <Experience />
+        <Stack />
+        <Projects />
+        <Writing />
+        <Contact />
+        <Footer />
+      </div>
+    </LocaleProvider>
   );
 }

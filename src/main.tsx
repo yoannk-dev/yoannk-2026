@@ -10,7 +10,7 @@ import App from './App.tsx'
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const theme = stored || (prefersDark ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', theme);
-  } catch (e) {}
+  } catch { /* localStorage unavailable */ }
 })();
 
 createRoot(document.getElementById('root')!).render(

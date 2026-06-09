@@ -1,6 +1,10 @@
+import { useLocale } from '../hooks/useLocale';
 import styles from './Hero.module.scss';
 
 export function Hero() {
+  const { t } = useLocale();
+  const h = t.hero;
+
   return (
     <section className={styles.hero}>
       <div className={styles.wrap}>
@@ -9,7 +13,7 @@ export function Hero() {
             <div className={`${styles.eyebrow} hl a1`}>
               <div className={styles.av}>
                 <i className={styles.online} />
-                Available for work
+                {h.available}
               </div>
             </div>
 
@@ -19,32 +23,31 @@ export function Hero() {
             </h1>
 
             <p className={`${styles.statement} hl a3`}>
-              Senior <b>Front-End Engineer</b> based in Paris.
+              {h.statementPre} <b>{h.statementBold}</b> {h.statementPost}
               <br />
-              15 years building fast, accessible web interfaces with
-              React &amp; TypeScript.
+              {h.statementLine2} React &amp; TypeScript.
             </p>
 
             <div className={`${styles.heroFoot} hl a4`}>
               <a href="#contact" className={styles.btn}>
-                Get in touch <span className={styles.arr}>↗</span>
+                {h.cta} <span className={styles.arr}>↗</span>
               </a>
               <a href="#projects" className={`${styles.btn} ${styles.ghost}`}>
-                See my work
+                {h.seeWork}
               </a>
             </div>
           </div>
 
           <div className={styles.heroside}>
             <div className={styles.blk}>
-              <div className={styles.mono}>Experience</div>
+              <div className={styles.mono}>{h.expLabel}</div>
               <div className={styles.v}>
                 <div className={styles.big}>15+</div>
-                <div>years in frontend</div>
+                <div>{h.expValue}</div>
               </div>
             </div>
             <div className={styles.blk}>
-              <div className={styles.mono}>Stack</div>
+              <div className={styles.mono}>{h.stackLabel}</div>
               <div className={styles.v}>
                 <div>React, TypeScript,<br />Vite, SCSS</div>
               </div>

@@ -1,3 +1,4 @@
+import { useLocale } from '../hooks/useLocale';
 import styles from './Contact.module.scss';
 
 const LINKS = [
@@ -8,16 +9,19 @@ const LINKS = [
 ];
 
 export function Contact() {
+  const { t } = useLocale();
+  const c = t.contact;
+
   return (
     <section id="contact" className={styles.section}>
       <div className={styles.wrap}>
         <div className={styles.shead}>
-          <h2>Get in touch</h2>
+          <h2>{c.title}</h2>
           <span className={styles.idx}>(06)</span>
         </div>
 
         <div className={styles.contact}>
-          <p className={styles.lead}>Let's work together on your next project.</p>
+          <p className={styles.lead}>{c.lead}</p>
           <div className={styles.big}>
             <a href="mailto:y.kermet@gmail.com">y.kermet@gmail.com</a>
           </div>

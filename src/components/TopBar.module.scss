@@ -101,6 +101,41 @@
   gap: 8px;
 }
 
+.langSwitch {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px 6px;
+    border-radius: 4px;
+    color: var(--faint);
+    transition: color 0.2s;
+    line-height: 1;
+
+    &:hover {
+      color: var(--ink);
+    }
+  }
+
+  .langActive {
+    color: var(--ink);
+    cursor: default;
+  }
+
+  .langSlash {
+    color: var(--line-strong);
+    font-weight: 400;
+    user-select: none;
+  }
+}
+
 .tbtn {
   width: 38px;
   height: 38px;

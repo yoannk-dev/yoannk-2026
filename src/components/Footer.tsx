@@ -1,6 +1,8 @@
+import { useLocale } from '../hooks/useLocale';
 import styles from './Footer.module.scss';
 
 export function Footer() {
+  const { t } = useLocale();
   const currentYear = new Date().getFullYear();
 
   const scrollToTop = () => {
@@ -13,10 +15,10 @@ export function Footer() {
         <div className={styles.foot}>
           <div className={styles.copyright}>
             <span className={styles.mono}>© {currentYear}</span>
-            <span>Yoann Kermet. All rights reserved.</span>
+            <span>Yoann Kermet. {t.footer.rights}</span>
           </div>
-          <button className={styles.totop} onClick={scrollToTop} title="Back to top">
-            Back to top
+          <button className={styles.totop} onClick={scrollToTop} title={t.footer.backToTop}>
+            {t.footer.backToTop}
             <span>↑</span>
           </button>
         </div>
