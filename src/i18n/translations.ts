@@ -1,4 +1,4 @@
-export type Locale = 'en' | 'fr';
+import type { Locale } from '../types/locale';
 
 export const translations = {
   fr: {
@@ -73,7 +73,7 @@ export const translations = {
     themeLight: 'Light',
     themeDark: 'Dark',
   },
-} as const;
+} as const satisfies Record<Locale, object>;
 
 export type Translations = typeof translations.fr | typeof translations.en;
 

@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 import { type Translations, translations } from './translations';
-import type { Locale } from './translations';
+import type { Locale } from '../types/locale';
 
 export type LocaleContextValue = {
   locale: Locale;

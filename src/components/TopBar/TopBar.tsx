@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLocale } from '../hooks/useLocale';
+import { useLocale } from '../../hooks/useLocale';
 import styles from './TopBar.module.scss';
 
 interface TopBarProps {
@@ -24,7 +24,7 @@ function MoonIcon() {
   );
 }
 
-export function TopBar({ theme, onThemeToggle }: TopBarProps) {
+export default function TopBar({ theme, onThemeToggle }: TopBarProps) {
   const { locale, setLocale, t } = useLocale();
   const [isScrolled, setIsScrolled] = useState(false);
 

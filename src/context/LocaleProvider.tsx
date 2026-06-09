@@ -1,6 +1,8 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { LocaleContext } from '../i18n/localeContext';
-import { type Locale, translations } from '../i18n/translations';
+import { translations } from '../i18n/translations';
+
+import type { Locale } from '../types/locale';
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(() => {
