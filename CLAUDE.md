@@ -19,14 +19,19 @@ Use **pnpm** (not npm or yarn). No test runner is configured yet.
 React 18 + TypeScript + Vite personal portfolio site.
 
 **Source layout (`src/`):**
-- `components/` — React components
-- `hooks/` — Custom React hooks
-- `config/` — App-level configuration
-- `types/` — Shared TypeScript type definitions
+- `components/` — Page-section components (Hero, About, Experience, Projects, Stack, Writing, Contact, Footer, TopBar) plus shared primitives (`Arrow.tsx`, `Reveal.tsx`)
+- `context/` — React context providers (`LocaleProvider.tsx`)
+- `hooks/` — Custom React hooks (`useLocale.ts`, `useScrollReveal.ts`, `useTheme.ts`)
+- `i18n/` — Internationalisation: `localeContext.ts` (context shape), `localise.ts` (helper), `translations.ts` (fr/en strings)
+- `types/` — Shared TypeScript type definitions (`locale.ts`)
 - `styles/_variables.scss` — SCSS design tokens/variables
 
 **Path alias:** `@` resolves to `./src` (configured in both `vite.config.ts` and `tsconfig.app.json`).
 
 **Styling:** SCSS modules (`.module.scss`) per component; global reset and font in `src/index.css`; design tokens in `src/styles/_variables.scss`.
+
+**i18n:** Two locales (`fr` | `en`). `LocaleProvider` stores the active locale in `localStorage` (`yk-lang`). Use the `useLocale()` hook to access `{ locale, toggle, t }` anywhere in the tree. The `localise()` helper resolves a `string | Record<Locale, string>` to the active language.
+
+**Theme:** Dark/light toggle via `useTheme()`. Active theme stored in `localStorage` (`yk-theme`); applied as `data-theme` on `<html>`. Defaults to `dark`.
 
 **TypeScript:** Strict mode enabled; `noUnusedLocals` and `noUnusedParameters` are enforced — clean up unused code before building.
