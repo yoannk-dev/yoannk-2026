@@ -3,10 +3,12 @@ import { useEffect, useRef } from 'react';
 export function useCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
+  const glowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const dot = dotRef.current;
     const ring = ringRef.current;
+    const glow = glowRef.current;
     if (!dot || !ring) return;
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -14,11 +16,17 @@ export function useCursor() {
 
     let mouseX = -200, mouseY = -200;
     let ringX = -200, ringY = -200;
+    let glowX = -200, glowY = -200;
     let rafId: number;
+    let shown = false;
 
     const move = (e: MouseEvent) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
+      if (!shown) {
+        shown = true;
+        if (glow) glow.style.opacity = '1';
+      }
     };
 
     const over = (e: MouseEvent) => {
@@ -36,11 +44,13 @@ export function useCursor() {
     const leave = () => {
       dot.style.opacity = '0';
       ring.style.opacity = '0';
+      if (glow) glow.style.opacity = '0';
     };
 
     const enter = () => {
       dot.style.opacity = '';
       ring.style.opacity = '';
+      if (glow) glow.style.opacity = '1';
     };
 
     const tick = () => {
@@ -50,6 +60,12 @@ export function useCursor() {
       ringY += (mouseY - ringY) * 0.08;
       ring.style.left = `${ringX}px`;
       ring.style.top = `${ringY}px`;
+      if (glow) {
+        glowX += (mouseX - glowX) * 0.04;
+        glowY += (mouseY - glowY) * 0.04;
+        glow.style.setProperty('--gx', `${glowX}px`);
+        glow.style.setProperty('--gy', `${glowY}px`);
+      }
       rafId = requestAnimationFrame(tick);
     };
 
@@ -70,5 +86,5 @@ export function useCursor() {
     };
   }, []);
 
-  return { dotRef, ringRef };
+  return { dotRef, ringRef, glowRef };
 }
