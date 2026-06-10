@@ -23,9 +23,22 @@
 
 .eyebrow {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 13px;
   color: var(--muted);
+
+  .separator {
+    display: none;
+
+    @media (min-width: $bp-wide) {
+      display: block;
+    }
+  }
+
+  @media (min-width: $bp-wide) {
+  flex-direction: row;
+  align-items: center;
+  }
 }
 
 .av {

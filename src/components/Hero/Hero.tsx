@@ -48,7 +48,7 @@ export default function Hero() {
           <div>
             <div className={`${styles.eyebrow} hl a1 mono`}>
               <span>{hero.role}</span>
-              <span>·</span>
+              <span className={styles.separator}>·</span>
               <span className={styles.av}><i className={styles.online} />{hero.available}</span>
             </div>
 
