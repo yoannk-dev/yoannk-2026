@@ -1,6 +1,7 @@
 import { useTheme } from './hooks/useTheme';
 import { LocaleProvider } from './context/LocaleProvider';
 
+import Cursor from './components/Cursor';
 import TopBar from './components/TopBar';
 import Hero from './components/Hero';
 import About from './components/About/About';
@@ -18,6 +19,7 @@ export default function App() {
 
   return (
     <LocaleProvider>
+      <Cursor />
       <div className={styles.app}>
         <TopBar theme={theme} onThemeToggle={toggle} />
         <main>
