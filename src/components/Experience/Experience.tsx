@@ -29,7 +29,7 @@ export default function Experience() {
                 ? <a className={styles.co} href={job.url} target="_blank" rel="noopener">{job.company}<Arrow className={styles.arr} /></a>
                 : <div className={styles.co} style={{ color: 'var(--muted)' }}>{job.company}</div>}
               <div className={styles.dsc}>{job.description[locale]}</div>
-              <div className={styles.tags} style={{ gridColumn: '2' }}>
+              <div className={styles.tags}>
                 {job.tags.map((tag) => (
                   <span key={tag} className={styles.tag}>{tag}</span>
                 ))}
