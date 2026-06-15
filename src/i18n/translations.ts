@@ -29,7 +29,7 @@ export const translations = {
     componentsLabel: 'composants livrés',
     viewSite: 'Voir le site',
     soon: 'Bientôt',
-    projectsIntro: 'Des mini-sites et expériences que je construis ici. Chacun ouvrira sa propre page dès qu\'il sera prêt.',
+    projectsIntro: 'Ce que je construis. Section régulièrement mise à jour.',
     writingIntro: 'Des notes sur le front-end, la performance, l\'architecture et l\'IA. Premiers articles à venir.',
     contactLead: 'Une idée, un poste, un café ?',
     backTop: 'Haut de page',
@@ -70,7 +70,7 @@ export const translations = {
     componentsLabel: 'components shipped',
     viewSite: 'View site',
     soon: 'Soon',
-    projectsIntro: 'Mini-sites and experiments I build here. Each opens its own page once it\'s ready.',
+    projectsIntro: 'What I\'m building. Section regularly updated.',
     writingIntro: 'Notes on front-end, performance, architecture and AI. First articles coming soon.',
     contactLead: 'An idea, a role, a coffee?',
     backTop: 'Back to top',
@@ -157,15 +157,15 @@ export const EXPERIENCE = [
 
 export const STACK_GROUPS = [
   { heading: { fr: 'Core',          en: 'Core'          }, items: ['React', 'TypeScript', 'JavaScript', 'HTML', 'CSS'] },
-  { heading: { fr: 'Frameworks',    en: 'Frameworks'    }, items: ['Next.js', 'Angular', 'Vue', 'Nuxt'] },
+  { heading: { fr: 'Frameworks',    en: 'Frameworks'    }, items: ['Next.js', 'Angular', 'Vue', 'Nuxt', 'Ruby on Rails'] },
   { heading: { fr: 'Architecture',  en: 'Architecture'  }, items: ['Front-end architecture', 'Micro-frontend', 'Performance web', 'WebSockets'] },
   { heading: { fr: 'Au-delà du code', en: 'Beyond code' }, items: ['Coding assisté par IA', 'Mentorat & leadership', 'Vision produit (ex-PM)', 'Testing & E2E'] },
 ];
 
 export const PROJECTS = [
-  { name: { fr: 'Projet 01', en: 'Project 01' }, blurb: { fr: 'Expérience à venir', en: 'Experiment coming soon' }, href: '' },
-  { name: { fr: 'Projet 02', en: 'Project 02' }, blurb: { fr: 'Expérience à venir', en: 'Experiment coming soon' }, href: '' },
-  { name: { fr: 'Projet 03', en: 'Project 03' }, blurb: { fr: 'Expérience à venir', en: 'Experiment coming soon' }, href: '' },
+  { name: { fr: 'Vinyles', en: 'Vinyles' }, blurb: { fr: 'Une application de suivi de collection de disques vinyles personnelle conçue avec Rails 8.1', en: 'A personal vinyl record collection tracker built with Rails 8.1' }, href: 'https://vinyles.yoann-k.com/' },
+  { name: { fr: 'TS Fullstack Starter', en: 'TS Fullstack Starter' }, blurb: { fr: 'Monorepo TypeScript avec Next.js, tRPC, Prisma, Tailwind CSS, Turborepo et pnpm', en: 'TypeScript monorepo boilerplate with Next.js, tRPC, Prisma, Tailwind CSS, Turborepo & pnpm workspaces' }, href: 'https://github.com/yoannk-dev/ts-fullstack-starter' },
+  { name: { fr: 'Drouot.immo', en: 'Drouot.immo' }, blurb: { fr: 'Une plateforme responsive construite de zéro, une architecture front-end scalable et maintenable. Enchères en direct', en: 'A responsive platform built from scratch, a scalable front-end architecture. Live Auction.' }, href: 'https://drouot.immo' },
 ];
 
 export const WRITING = [

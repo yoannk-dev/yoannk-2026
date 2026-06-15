@@ -27,7 +27,7 @@ export default function Projects() {
             const live = !!project.href;
             if (live) {
               return (
-                <a className={`${styles.card} ${styles.live}`} key={i} href={project.href}>
+                <a className={`${styles.card} ${styles.live}`} key={i} href={project.href} target="_blank">
                   <div className={styles.top}>
                     <span className={styles.n}>{String(i + 1).padStart(2, '0')}</span>
                     <span className={styles.badge}>Live</span>
