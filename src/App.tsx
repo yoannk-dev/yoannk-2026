@@ -12,6 +12,8 @@ import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 
+import { Analytics } from '@vercel/analytics/react';
+
 import styles from './App.module.scss';
 
 export default function App() {
@@ -33,6 +35,7 @@ export default function App() {
         </main>
         <Footer />
       </div>
+      <Analytics />
     </LocaleProvider>
   );
 }
