@@ -10,9 +10,11 @@ pnpm build        # Type-check + production build (tsc -b && vite build)
 pnpm preview      # Preview production build locally
 pnpm c:lint       # ESLint with --max-warnings 0
 pnpm c:type       # TypeScript type-check without emit
+pnpm c:test       # Run test suite once (vitest run)
+pnpm test         # Run tests in watch mode
 ```
 
-Use **pnpm** (not npm or yarn). No test runner is configured yet.
+Use **pnpm** (not npm or yarn).
 
 ## Architecture
 
@@ -35,3 +37,24 @@ React 18 + TypeScript + Vite personal portfolio site.
 **Theme:** Dark/light toggle via `useTheme()`. Active theme stored in `localStorage` (`yk-theme`); applied as `data-theme` on `<html>`. Defaults to `dark`.
 
 **TypeScript:** Strict mode enabled; `noUnusedLocals` and `noUnusedParameters` are enforced — clean up unused code before building.
+
+## Testing
+
+**Stack:** Vitest 3 + jsdom + `@testing-library/react` + `@testing-library/user-event` + `@testing-library/jest-dom`.
+
+**Test files:** co-located `*.test.tsx` next to each component/hook. No snapshots — behavior only.
+
+**Coverage:** 11 test files, 73 tests across all page-section components and hooks.
+
+**Shared helper:** `src/test/helpers.tsx` exports `renderWithProviders(ui, { locale })` — wraps in `<LocaleProvider>` and seeds `localStorage` before render to control locale.
+
+**Global mocks** (applied in `src/test/setup.ts`):
+- `localStorage` — in-memory store; call `localStorage.clear()` in `beforeEach` to reset between tests
+- `IntersectionObserver` — no-op stub (required by `Reveal`)
+- `matchMedia` — stub returning `matches: false`
+
+**Conventions:**
+- Prefer `getByRole` over `querySelector` for queries
+- Use `getAllByText` when the same string legitimately appears multiple times (e.g. marquee keywords, shared role labels)
+- SCSS modules return `{}` in tests (`css: false`) — never assert on hashed class names; assert on behavior and DOM structure instead
+- To test a component in a specific locale, pass `{ locale: 'en' }` to `renderWithProviders`; default is `'fr'`
