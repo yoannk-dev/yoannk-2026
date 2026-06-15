@@ -9,14 +9,13 @@ describe('Projects', () => {
     localStorage.clear();
   });
 
-  it(`rend ${PROJECTS.length} cartes projet`, () => {
+  it(`renders ${PROJECTS.length} project cards`, () => {
     const { container } = renderWithProviders(<Projects />);
-    // Tous les projets ont un href ici, donc ce sont tous des <a> ; on compte les cards
     const cards = container.querySelectorAll('a[target="_blank"]');
     expect(cards.length).toBeGreaterThanOrEqual(PROJECTS.length);
   });
 
-  it('les projets avec href sont des <a> avec target _blank', () => {
+  it('projects with href render as <a> with target _blank', () => {
     renderWithProviders(<Projects />);
     for (const project of PROJECTS) {
       if (project.href) {
@@ -27,26 +26,26 @@ describe('Projects', () => {
     }
   });
 
-  it('tous les projets live affichent le badge "Live"', () => {
+  it('all live projects display the "Live" badge', () => {
     renderWithProviders(<Projects />);
     const liveBadges = screen.getAllByText('Live');
     const liveCount = PROJECTS.filter(p => !!p.href).length;
     expect(liveBadges).toHaveLength(liveCount);
   });
 
-  it('en FR, t.soon ("Bientôt") n\'est pas affiché comme badge (tous les projets sont live)', () => {
+  it('soon badge is not shown when all projects are live (FR)', () => {
     renderWithProviders(<Projects />);
     expect(screen.queryByText('Bientôt')).not.toBeInTheDocument();
   });
 
-  it('en EN, "View site" est visible pour chaque projet live', () => {
+  it('"View site" label is visible for each live project in EN locale', () => {
     renderWithProviders(<Projects />, { locale: 'en' });
     const viewSiteLinks = screen.getAllByText('View site');
     const liveCount = PROJECTS.filter(p => !!p.href).length;
     expect(viewSiteLinks).toHaveLength(liveCount);
   });
 
-  it('en EN, "Soon" n\'est pas affiché (tous les projets sont live)', () => {
+  it('"Soon" badge is not shown when all projects are live (EN)', () => {
     renderWithProviders(<Projects />, { locale: 'en' });
     expect(screen.queryByText('Soon')).not.toBeInTheDocument();
   });

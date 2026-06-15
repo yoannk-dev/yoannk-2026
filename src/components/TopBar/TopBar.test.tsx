@@ -12,12 +12,12 @@ describe('TopBar', () => {
     onThemeToggle.mockClear();
   });
 
-  it('rend le nom Yoann Kermet', () => {
+  it('renders the name Yoann Kermet', () => {
     renderWithProviders(<TopBar theme="dark" onThemeToggle={onThemeToggle} />);
     expect(screen.getByRole('link', { name: /yoann\s*kermet/i })).toBeInTheDocument();
   });
 
-  it('toggle locale FR→EN : les liens nav passent en anglais', async () => {
+  it('locale toggle FR→EN: nav links switch to English', async () => {
     const user = userEvent.setup();
     renderWithProviders(<TopBar theme="dark" onThemeToggle={onThemeToggle} />);
     expect(screen.getByRole('link', { name: 'Parcours' })).toBeInTheDocument();
@@ -25,7 +25,7 @@ describe('TopBar', () => {
     expect(screen.getByRole('link', { name: 'Work' })).toBeInTheDocument();
   });
 
-  it('toggle locale EN→FR : les liens nav reviennent en français', async () => {
+  it('locale toggle EN→FR: nav links switch back to French', async () => {
     const user = userEvent.setup();
     renderWithProviders(<TopBar theme="dark" onThemeToggle={onThemeToggle} />, { locale: 'en' });
     expect(screen.getByRole('link', { name: 'Work' })).toBeInTheDocument();
@@ -33,26 +33,26 @@ describe('TopBar', () => {
     expect(screen.getByRole('link', { name: 'Parcours' })).toBeInTheDocument();
   });
 
-  it('click thème appelle onThemeToggle', async () => {
+  it('theme button click calls onThemeToggle', async () => {
     const user = userEvent.setup();
     renderWithProviders(<TopBar theme="dark" onThemeToggle={onThemeToggle} />);
     await user.click(screen.getByRole('button', { name: 'Toggle theme' }));
     expect(onThemeToggle).toHaveBeenCalledOnce();
   });
 
-  it('affiche SunIcon en mode dark (cercle dans le SVG)', () => {
+  it('shows SunIcon in dark mode (circle in SVG)', () => {
     renderWithProviders(<TopBar theme="dark" onThemeToggle={onThemeToggle} />);
     const btn = screen.getByRole('button', { name: 'Toggle theme' });
     expect(btn.querySelector('circle')).toBeTruthy();
   });
 
-  it('affiche MoonIcon en mode light (pas de cercle dans le SVG)', () => {
+  it('shows MoonIcon in light mode (no circle in SVG)', () => {
     renderWithProviders(<TopBar theme="light" onThemeToggle={onThemeToggle} />);
     const btn = screen.getByRole('button', { name: 'Toggle theme' });
     expect(btn.querySelector('circle')).toBeNull();
   });
 
-  it('affiche les liens nav en anglais en locale EN', () => {
+  it('shows English nav labels in EN locale', () => {
     renderWithProviders(<TopBar theme="dark" onThemeToggle={onThemeToggle} />, { locale: 'en' });
     expect(screen.getByRole('link', { name: 'Work' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Projects' })).toBeInTheDocument();

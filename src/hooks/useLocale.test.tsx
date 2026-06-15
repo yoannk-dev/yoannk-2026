@@ -14,55 +14,47 @@ describe('useLocale (via LocaleProvider)', () => {
     document.documentElement.removeAttribute('lang');
   });
 
-  it('locale par défaut est "fr" sans localStorage', () => {
+  it('defaults to "fr" when localStorage is empty', () => {
     const { result } = renderHook(() => useLocale(), { wrapper });
     expect(result.current.locale).toBe('fr');
   });
 
-  it('lit la locale depuis localStorage au montage', () => {
+  it('reads locale from localStorage on mount', () => {
     localStorage.setItem('yk-lang', 'en');
     const { result } = renderHook(() => useLocale(), { wrapper });
     expect(result.current.locale).toBe('en');
   });
 
-  it('toggle() passe de fr à en', () => {
+  it('toggle() switches from fr to en', () => {
     const { result } = renderHook(() => useLocale(), { wrapper });
-    act(() => {
-      result.current.toggle();
-    });
+    act(() => { result.current.toggle(); });
     expect(result.current.locale).toBe('en');
   });
 
-  it('toggle() twice revient à fr', () => {
+  it('toggle() twice returns to fr', () => {
     const { result } = renderHook(() => useLocale(), { wrapper });
     act(() => { result.current.toggle(); });
     act(() => { result.current.toggle(); });
     expect(result.current.locale).toBe('fr');
   });
 
-  it('setLocale("en") force la locale en et persiste dans localStorage', () => {
+  it('setLocale("en") forces the locale and persists to localStorage', () => {
     const { result } = renderHook(() => useLocale(), { wrapper });
-    act(() => {
-      result.current.setLocale('en');
-    });
+    act(() => { result.current.setLocale('en'); });
     expect(result.current.locale).toBe('en');
     expect(localStorage.getItem('yk-lang')).toBe('en');
   });
 
-  it('setLocale met à jour l\'attribut lang de <html>', () => {
+  it('setLocale updates the lang attribute on <html>', () => {
     const { result } = renderHook(() => useLocale(), { wrapper });
-    act(() => {
-      result.current.setLocale('en');
-    });
+    act(() => { result.current.setLocale('en'); });
     expect(document.documentElement.getAttribute('lang')).toBe('en');
   });
 
-  it('t contient les traductions de la locale active', () => {
+  it('t reflects the translations of the active locale', () => {
     const { result } = renderHook(() => useLocale(), { wrapper });
     expect(result.current.t.nav.work).toBe('Parcours');
-    act(() => {
-      result.current.setLocale('en');
-    });
+    act(() => { result.current.setLocale('en'); });
     expect(result.current.t.nav.work).toBe('Work');
   });
 });

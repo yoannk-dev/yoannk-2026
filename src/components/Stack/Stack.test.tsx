@@ -9,13 +9,12 @@ describe('Stack', () => {
     localStorage.clear();
   });
 
-  it(`rend ${STACK_GROUPS.length} groupes`, () => {
+  it(`renders ${STACK_GROUPS.length} groups`, () => {
     const { container } = renderWithProviders(<Stack />);
-    // Chaque groupe est un <div> dans la grille ; on vérifie via les <h4>
     expect(container.querySelectorAll('h4')).toHaveLength(STACK_GROUPS.length);
   });
 
-  it('les headings de groupes sont visibles en FR', () => {
+  it('group headings are visible in FR locale', () => {
     renderWithProviders(<Stack />);
     for (const group of STACK_GROUPS) {
       const heading = typeof group.heading === 'string' ? group.heading : group.heading.fr;
@@ -23,7 +22,7 @@ describe('Stack', () => {
     }
   });
 
-  it('les headings de groupes sont visibles en EN', () => {
+  it('group headings are visible in EN locale', () => {
     renderWithProviders(<Stack />, { locale: 'en' });
     for (const group of STACK_GROUPS) {
       const heading = typeof group.heading === 'string' ? group.heading : group.heading.en;
@@ -31,7 +30,7 @@ describe('Stack', () => {
     }
   });
 
-  it('tous les items de chaque groupe sont listés', () => {
+  it('all items in each group are listed', () => {
     renderWithProviders(<Stack />);
     for (const group of STACK_GROUPS) {
       for (const item of group.items) {
@@ -40,12 +39,12 @@ describe('Stack', () => {
     }
   });
 
-  it('en FR, le heading "Au-delà du code" est visible', () => {
+  it('shows "Au-delà du code" heading in FR locale', () => {
     renderWithProviders(<Stack />);
     expect(screen.getByText('Au-delà du code')).toBeInTheDocument();
   });
 
-  it('en EN, le heading "Beyond code" est visible', () => {
+  it('shows "Beyond code" heading in EN locale', () => {
     renderWithProviders(<Stack />, { locale: 'en' });
     expect(screen.getByText('Beyond code')).toBeInTheDocument();
   });

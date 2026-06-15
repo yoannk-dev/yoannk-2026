@@ -12,46 +12,40 @@ describe('useTheme', () => {
     document.documentElement.removeAttribute('data-theme');
   });
 
-  it('thème par défaut est "dark" sans localStorage', () => {
+  it('defaults to "dark" when localStorage is empty', () => {
     const { result } = renderHook(() => useTheme());
     expect(result.current.theme).toBe('dark');
   });
 
-  it('lit le thème depuis localStorage au montage', () => {
+  it('reads theme from localStorage on mount', () => {
     localStorage.setItem('yk-theme', 'light');
     const { result } = renderHook(() => useTheme());
     expect(result.current.theme).toBe('light');
   });
 
-  it('toggle() passe de dark à light', () => {
+  it('toggle() switches from dark to light', () => {
     const { result } = renderHook(() => useTheme());
-    act(() => {
-      result.current.toggle();
-    });
+    act(() => { result.current.toggle(); });
     expect(result.current.theme).toBe('light');
   });
 
-  it('toggle() met à jour localStorage', () => {
+  it('toggle() persists the new theme in localStorage', () => {
     const { result } = renderHook(() => useTheme());
-    act(() => {
-      result.current.toggle();
-    });
+    act(() => { result.current.toggle(); });
     expect(localStorage.getItem('yk-theme')).toBe('light');
   });
 
-  it('toggle() twice revient à dark', () => {
+  it('toggle() twice returns to dark', () => {
     const { result } = renderHook(() => useTheme());
     act(() => { result.current.toggle(); });
     act(() => { result.current.toggle(); });
     expect(result.current.theme).toBe('dark');
   });
 
-  it('l\'attribut data-theme de <html> est mis à jour', () => {
+  it('updates data-theme attribute on <html>', () => {
     const { result } = renderHook(() => useTheme());
     expect(document.documentElement.getAttribute('data-theme')).toBe('dark');
-    act(() => {
-      result.current.toggle();
-    });
+    act(() => { result.current.toggle(); });
     expect(document.documentElement.getAttribute('data-theme')).toBe('light');
   });
 });

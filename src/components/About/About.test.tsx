@@ -10,22 +10,22 @@ describe('About', () => {
     localStorage.clear();
   });
 
-  it('rend le titre de section en FR : Profil', () => {
+  it('renders section heading in FR: Profil', () => {
     renderWithProviders(<About />);
     expect(screen.getByRole('heading', { name: /profil/i })).toBeInTheDocument();
   });
 
-  it('rend le titre de section en EN : Profile', () => {
+  it('renders section heading in EN: Profile', () => {
     renderWithProviders(<About />, { locale: 'en' });
     expect(screen.getByRole('heading', { name: /profile/i })).toBeInTheDocument();
   });
 
-  it('rend les 2 paragraphes aboutBody', () => {
+  it('renders the 2 aboutBody paragraphs', () => {
     renderWithProviders(<About />);
     expect(screen.getAllByRole('paragraph').length).toBeGreaterThanOrEqual(2);
   });
 
-  it('rend les 3 blocs méta de ABOUT_META', () => {
+  it('renders all 3 ABOUT_META blocks with their labels', () => {
     renderWithProviders(<About />);
     for (const item of ABOUT_META) {
       const label = localise(item.label, 'fr');
@@ -33,17 +33,17 @@ describe('About', () => {
     }
   });
 
-  it('affiche la valeur M1 Info-Comm', () => {
+  it('renders the M1 Info-Comm education value', () => {
     renderWithProviders(<About />);
     expect(screen.getByText(/M1 Info-Comm/)).toBeInTheDocument();
   });
 
-  it('label FORMATION en FR', () => {
+  it('shows FORMATION label in FR locale', () => {
     renderWithProviders(<About />);
     expect(screen.getByText('FORMATION')).toBeInTheDocument();
   });
 
-  it('label EDUCATION en EN', () => {
+  it('shows EDUCATION label in EN locale', () => {
     renderWithProviders(<About />, { locale: 'en' });
     expect(screen.getByText('EDUCATION')).toBeInTheDocument();
   });

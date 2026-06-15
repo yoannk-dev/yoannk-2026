@@ -8,35 +8,35 @@ describe('Footer', () => {
     localStorage.clear();
   });
 
-  it('affiche l\'année courante', () => {
+  it('displays the current year', () => {
     renderWithProviders(<Footer />);
     const year = new Date().getFullYear().toString();
     expect(screen.getByText(new RegExp(year))).toBeInTheDocument();
   });
 
-  it('le lien retour haut de page pointe vers #top', () => {
+  it('back-to-top link points to #top in FR locale', () => {
     renderWithProviders(<Footer />);
     const link = screen.getByRole('link', { name: /haut de page/i });
     expect(link).toHaveAttribute('href', '#top');
   });
 
-  it('le lien "Back to top" pointe vers #top en EN', () => {
+  it('back-to-top link points to #top in EN locale', () => {
     renderWithProviders(<Footer />, { locale: 'en' });
     const link = screen.getByRole('link', { name: /back to top/i });
     expect(link).toHaveAttribute('href', '#top');
   });
 
-  it('le colophon est rendu', () => {
+  it('renders the colophon text', () => {
     renderWithProviders(<Footer />);
     expect(screen.getByText(/Space Grotesk/)).toBeInTheDocument();
   });
 
-  it('en EN, "All rights reserved." est visible', () => {
+  it('shows "All rights reserved." in EN locale', () => {
     renderWithProviders(<Footer />, { locale: 'en' });
     expect(screen.getByText(/All rights reserved\./)).toBeInTheDocument();
   });
 
-  it('en FR, "Tous droits réservés." est visible', () => {
+  it('shows "Tous droits réservés." in FR locale', () => {
     renderWithProviders(<Footer />);
     expect(screen.getByText(/Tous droits réservés\./)).toBeInTheDocument();
   });
