@@ -11,16 +11,16 @@ export default function Projects() {
     <section id="projects">
       <div className={styles.wrap}>
         <Reveal>
-          <div className={styles.shead}>
+          <div className={styles.sectionHeader}>
             <h2>
-              <span className={`${styles.num} mono`} style={{ fontSize: 13, verticalAlign: 'middle', marginRight: 14 }}>04</span>
+              <span className={`${styles.sectionNumber} mono`} style={{ fontSize: 13, verticalAlign: 'middle', marginRight: 14 }}>04</span>
               {t.sections.projects}
             </h2>
-            <span className={`${styles.idx} mono`}>// projects</span>
+            <span className={`${styles.sectionLabel} mono`}>// projects</span>
           </div>
         </Reveal>
 
-        <Reveal as="p" delay={1} className={styles.pintro}>{t.projectsIntro}</Reveal>
+        <Reveal as="p" delay={1} className={styles.intro}>{t.projectsIntro}</Reveal>
 
         <Reveal as="div" delay={1} className={styles.cards}>
           {PROJECTS.map((project, i) => {
@@ -42,12 +42,12 @@ export default function Projects() {
                 </div>
 
                 <div className={styles.info}>
-                  <span className={styles.n}>{String(i + 1).padStart(2, '0')}</span>
+                  <span className={styles.cardNumber}>{String(i + 1).padStart(2, '0')}</span>
                   <h3>{project.name[locale]}</h3>
                   <div className={styles.blurb}>{project.blurb[locale]}</div>
-                  <span className={styles.go}>
+                  <span className={styles.action}>
                     {live ? t.viewSite : t.soon}
-                    <Arrow className={styles.arr} />
+                    <Arrow className={styles.arrow} />
                   </span>
                 </div>
               </Wrapper>
