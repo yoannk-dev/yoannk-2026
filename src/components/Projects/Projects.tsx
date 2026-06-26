@@ -25,29 +25,32 @@ export default function Projects() {
         <Reveal as="div" delay={1} className={styles.cards}>
           {PROJECTS.map((project, i) => {
             const live = !!project.href;
-            if (live) {
-              return (
-                <a className={`${styles.card} ${styles.live}`} key={i} href={project.href} target="_blank">
-                  <div className={styles.top}>
-                    <span className={styles.n}>{String(i + 1).padStart(2, '0')}</span>
-                    <span className={styles.badge}>Live</span>
-                  </div>
+            const Wrapper = live ? 'a' : 'div';
+            const wrapperProps = live
+              ? { href: project.href, target: '_blank' as const, rel: 'noopener noreferrer' }
+              : {};
+
+            return (
+              <Wrapper
+                className={`${styles.card} ${live ? styles.live : ''}`}
+                key={i}
+                {...wrapperProps}
+              >
+                <div className={styles.thumb}>
+                  <img className={styles.thumbImg} src={project.img} alt={project.name[locale]} />
+                  {live && <span className={styles.badge}>{t.live}</span>}
+                </div>
+
+                <div className={styles.info}>
+                  <span className={styles.n}>{String(i + 1).padStart(2, '0')}</span>
                   <h3>{project.name[locale]}</h3>
                   <div className={styles.blurb}>{project.blurb[locale]}</div>
-                  <span className={styles.go}>{t.viewSite}<Arrow className={styles.arr} /></span>
-                </a>
-              );
-            }
-            return (
-              <div className={styles.card} key={i}>
-                <div className={styles.top}>
-                  <span className={styles.n}>{String(i + 1).padStart(2, '0')}</span>
-                  <span className={styles.badge}>{t.soon}</span>
+                  <span className={styles.go}>
+                    {live ? t.viewSite : t.soon}
+                    <Arrow className={styles.arr} />
+                  </span>
                 </div>
-                <h3>{project.name[locale]}</h3>
-                <div className={styles.blurb}>{project.blurb[locale]}</div>
-                <span className={styles.go}>{t.soon}<Arrow className={styles.arr} /></span>
-              </div>
+              </Wrapper>
             );
           })}
         </Reveal>
