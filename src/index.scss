@@ -1,0 +1,46 @@
+@use './assets/styles/reset';
+@use './assets/styles/reveal';
+@use './assets/styles/hero-load';
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --accent: #E8401F;
+  --accent-ink: #E8401F;
+  --available: #2ec16b;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --faint: #A39B8E;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --gutter: 32px;
+  --ink: #15120E;
+  --line: rgba(21, 18, 14, 0.13);
+  --line-strong: rgba(21, 18, 14, 0.26);
+  --maxw: 1180px;
+  --muted: #736C61;
+  --paper: #F1EFE9;
+  --raise: #F8F6F1;
+  --shadow: 0 1px 0 rgba(21, 18, 14, 0.04);
+  --glow-color: rgba(232, 132, 31, 0.06);
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --accent: #FF5A33;
+  --accent-ink: #FF6A45;
+  --faint: #5E5950;
+  --ink: #ECEAE3;
+  --line: rgba(236, 234, 227, 0.14);
+  --line-strong: rgba(236, 234, 227, 0.28);
+  --muted: #928C82;
+  --paper: #0C0C0E;
+  --raise: #141416;
+  --shadow: none;
+  color-scheme: dark;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
