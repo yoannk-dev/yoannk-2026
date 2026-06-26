@@ -11,12 +11,12 @@ export default function About() {
     <section id="about">
       <div className={styles.wrap}>
         <Reveal>
-          <div className={styles.shead}>
+          <div className={styles.sectionHeader}>
             <h2>
-              <span className={`${styles.num} mono`}>01</span>
+              <span className={`${styles.sectionNumber} mono`}>01</span>
               {t.sections.about}
             </h2>
-            <span className={`${styles.idx} mono`}>// profile</span>
+            <span className={`${styles.sectionLabel} mono`}>// profile</span>
           </div>
         </Reveal>
 
@@ -29,9 +29,9 @@ export default function About() {
 
           <Reveal as="div" delay={1} className={styles.meta}>
             {ABOUT_META.map((item, i) => (
-              <div className={styles.row} key={i}>
-                <div className={`${styles.mono}`}>{localise(item.label, locale)}</div>
-                <div className={styles.v}>{localise(item.value, locale)}</div>
+              <div className={styles.metaRow} key={i}>
+                <div className={styles.monoLabel}>{localise(item.label, locale)}</div>
+                <div className={styles.metaValue}>{localise(item.value, locale)}</div>
               </div>
             ))}
           </Reveal>

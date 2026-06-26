@@ -4,8 +4,11 @@
 :root {
   --accent: #E8401F;
   --accent-ink: #E8401F;
+  --available: #2ec16b;
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --faint: #A39B8E;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --gutter: 32px;
   --ink: #15120E;
   --line: rgba(21, 18, 14, 0.13);
   --line-strong: rgba(21, 18, 14, 0.26);

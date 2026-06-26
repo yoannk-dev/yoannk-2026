@@ -181,7 +181,7 @@ export const WRITING = [
 ];
 
 export const ABOUT_META = [
-  { label: { fr: 'FORMATION',   en: 'EDUCATION'   }, value: 'M1 Info-Comm · Univ. Nice-Sophia Antipolis' },
+  { label: { fr: 'FORMATION',   en: 'EDUCATION'   }, value: 'M1 Info-Comm · Univ. Nice-Sophia Antipolis. Certification RNCP39261 AI Software Development' },
   { label: { fr: 'DISTINCTION', en: 'AWARD'        }, value: 'UX Awards 2016 · Best mobile journey' },
   { label: { fr: 'LANGUES',     en: 'LANGUAGES'    }, value: { fr: 'Français (natif) · Anglais (pro)', en: 'French (native) · English (pro)' } },
 ];

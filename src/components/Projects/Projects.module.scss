@@ -1,31 +1,15 @@
-@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 .wrap {
-  max-width: $max-width;
-  margin: 0 auto;
-  padding: 0 $gutter;
+  @include wrap;
 }
 
 .sectionHeader {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 24px;
-  padding-top: 96px;
-  margin-bottom: 44px;
-  flex-wrap: wrap;
-
-  h2 {
-    font-size: clamp(30px, 5vw, 58px);
-    letter-spacing: -0.03em;
-    line-height: 1;
-    font-weight: 700;
-    color: var(--ink);
-  }
+  @include sectionHead;
 }
 
 .sectionNumber { color: var(--accent); }
-.sectionLabel { color: var(--faint); }
+.sectionLabel  { color: var(--faint); }
 
 .intro {
   color: var(--muted);
@@ -43,7 +27,7 @@
   border-radius: 14px;
   overflow: hidden;
 
-  @media (min-width: $bp-tablet) {
+  @include respond-to('tablet') {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -53,7 +37,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: background 0.35s $ease;
+  transition: background 0.35s var(--ease);
 
   &:hover {
     background: var(--raise);
@@ -80,7 +64,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s $ease;
+  transition: transform 0.5s var(--ease);
 
   .card:hover & {
     transform: scale(1.03);
@@ -99,7 +83,7 @@
   position: absolute;
   top: 12px;
   left: 12px;
-  font-family: $font-mono;
+  font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -140,7 +124,7 @@
 }
 
 .arrow {
-  transition: transform 0.25s $ease;
+  transition: transform 0.25s var(--ease);
 }
 
 .live {

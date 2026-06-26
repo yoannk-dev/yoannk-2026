@@ -10,12 +10,12 @@ export default function Stack() {
     <section id="stack">
       <div className={styles.wrap}>
         <Reveal>
-          <div className={styles.shead}>
+          <div className={styles.sectionHeader}>
             <h2>
-              <span className={`${styles.num} mono`} style={{ fontSize: 13, verticalAlign: 'middle', marginRight: 14 }}>03</span>
+              <span className={`${styles.sectionNumber} mono`} style={{ fontSize: 13, verticalAlign: 'middle', marginRight: 14 }}>03</span>
               {t.sections.stack}
             </h2>
-            <span className={`${styles.idx} mono`}>// stack</span>
+            <span className={`${styles.sectionLabel} mono`}>// stack</span>
           </div>
         </Reveal>
 
@@ -24,7 +24,7 @@ export default function Stack() {
             <div className={styles.cell} key={i}>
               <h4 className="mono">{typeof group.heading === 'string' ? group.heading : group.heading[locale]}</h4>
               <ul>
-                {group.items.map((skill) => <li key={skill}>{skill}</li>)}
+                {group.items.map((skill) => <li key={skill} className={styles.cellItem}>{skill}</li>)}
               </ul>
             </div>
           ))}

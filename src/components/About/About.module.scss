@@ -1,46 +1,22 @@
-@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 .wrap {
-  max-width: $max-width;
-  margin: 0 auto;
-  padding: 0 $gutter;
+  @include wrap;
 }
 
-.shead {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 24px;
-  padding-top: 96px;
-  margin-bottom: 44px;
-  flex-wrap: wrap;
-
-  h2 {
-    font-size: clamp(30px, 5vw, 58px);
-    letter-spacing: -0.03em;
-    line-height: 1;
-    font-weight: 700;
-    color: var(--ink);
-  }
+.sectionHeader {
+  @include sectionHead;
 }
 
-.num {
-  color: var(--accent);
-  font-size: 13px;
-  vertical-align: middle;
-  margin-right: 14px;
-}
-
-.idx {
-  color: var(--faint);
-}
+.sectionNumber { color: var(--accent); }
+.sectionLabel  { color: var(--faint); }
 
 .about {
   display: grid;
   grid-template-columns: 1fr;
   gap: 34px;
 
-  @media (min-width: $bp-wide) {
+  @include respond-to('wide') {
     grid-template-columns: 1.5fr 0.8fr;
     gap: 60px;
   }
@@ -65,16 +41,11 @@
   gap: 20px;
 }
 
-.mono {
-  color: var(--faint);
-  font-family: $font-mono;
-  font-size: 12px;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  font-weight: 500;
+.monoLabel {
+  @include monoLabel;
 }
 
-.row .v {
+.metaRow .metaValue {
   margin-top: 6px;
   color: var(--ink);
   font-size: 16px;
