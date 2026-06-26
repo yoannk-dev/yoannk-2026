@@ -62,4 +62,11 @@ describe('Hero', () => {
       expect(screen.getAllByText(keyword).length).toBeGreaterThan(0);
     }
   });
+
+  it('renders the profile picture with accessible label', () => {
+    renderWithProviders(<Hero />);
+    const profilePic = screen.getByRole('img', { name: /yoann kermet/i });
+    expect(profilePic).toBeInTheDocument();
+    expect(profilePic.tagName).toBe('CANVAS');
+  });
 });

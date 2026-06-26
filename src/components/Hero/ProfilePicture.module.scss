@@ -1,0 +1,15 @@
+@use '../../styles/variables' as *;
+
+.profilePicture {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 6px;
+  flex-shrink: 0;
+
+  @media (min-width: $bp-wide) {
+    width: 155px;
+    height: 155px;
+    border-radius: 8px;
+  }
+}

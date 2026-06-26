@@ -13,6 +13,7 @@ export const translations = {
       role: 'Senior Front-End Engineer',
       available: 'Disponible pour de nouveaux projets',
       contactCta: 'Écrivez-moi',
+      statement: 'Je conçois et construis des interfaces web rapides, accessibles et durables — surtout en **React** & **TypeScript**.',
     },
     sections: {
       about: 'Profil',
@@ -55,6 +56,7 @@ export const translations = {
       role: 'Senior Front-End Engineer',
       available: 'Available for new projects',
       contactCta: 'Get in touch',
+      statement: 'I design and build fast, accessible, long-lasting web interfaces — mostly with **React** & **TypeScript**.',
     },
     sections: {
       about: 'Profile',

@@ -21,7 +21,7 @@ Use **pnpm** (not npm or yarn).
 React 18 + TypeScript + Vite personal portfolio site.
 
 **Source layout (`src/`):**
-- `components/` — Page-section components (Hero, About, Experience, Projects, Stack, Writing, Contact, Footer, TopBar) plus shared primitives (`Arrow.tsx`, `Reveal.tsx`)
+- `components/` — Page-section components (Hero, About, Experience, Projects, Stack, Writing, Contact, Footer, TopBar) plus shared primitives (`Arrow.tsx`, `Reveal.tsx`). Some sections split into sub-components within their folder (e.g. `Hero/` contains `Clock.tsx`, `Marquee.tsx`, `ProfilePicture.tsx`, each with their own `.module.scss`).
 - `context/` — React context providers (`LocaleProvider.tsx`)
 - `hooks/` — Custom React hooks (`useLocale.ts`, `useScrollReveal.ts`, `useTheme.ts`)
 - `i18n/` — Internationalisation: `localeContext.ts` (context shape), `localise.ts` (helper), `translations.ts` (fr/en strings)
@@ -34,6 +34,8 @@ React 18 + TypeScript + Vite personal portfolio site.
 
 **i18n:** Two locales (`fr` | `en`). `LocaleProvider` stores the active locale in `localStorage` (`yk-lang`). Use the `useLocale()` hook to access `{ locale, toggle, t }` anywhere in the tree. The `localise()` helper resolves a `string | Record<Locale, string>` to the active language.
 
+To mark words as bold inside a translated string, wrap them with `**word**` (e.g. `"mostly with **React** & **TypeScript**."`). Parse at render time with the `parseBold()` helper in `Hero.tsx`, which splits on that pattern and wraps matched tokens in `<strong>`.
+
 **Theme:** Dark/light toggle via `useTheme()`. Active theme stored in `localStorage` (`yk-theme`); applied as `data-theme` on `<html>`. Defaults to `dark`.
 
 **TypeScript:** Strict mode enabled; `noUnusedLocals` and `noUnusedParameters` are enforced — clean up unused code before building.
@@ -44,7 +46,7 @@ React 18 + TypeScript + Vite personal portfolio site.
 
 **Test files:** co-located `*.test.tsx` next to each component/hook. No snapshots — behavior only.
 
-**Coverage:** 11 test files, 74 tests across all page-section components and hooks.
+**Coverage:** 11 test files, 75 tests across all page-section components and hooks.
 
 **Shared helper:** `src/test/helpers.tsx` exports `renderWithProviders(ui, { locale })` — wraps in `<LocaleProvider>` and seeds `localStorage` before render to control locale.
 
