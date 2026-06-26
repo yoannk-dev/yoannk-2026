@@ -1,4 +1,4 @@
-@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 .profilePicture {
   display: block;
@@ -7,7 +7,7 @@
   border-radius: 6px;
   flex-shrink: 0;
 
-  @media (min-width: $bp-wide) {
+  @include respond-to('wide') {
     width: 155px;
     height: 155px;
     border-radius: 8px;

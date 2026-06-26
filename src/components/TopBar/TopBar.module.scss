@@ -1,4 +1,4 @@
-@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 .bar {
   position: fixed;
@@ -9,7 +9,7 @@
   backdrop-filter: saturate(1.4) blur(12px);
   background: color-mix(in srgb, var(--paper) 78%, transparent);
   border-bottom: 1px solid transparent;
-  transition: border-color 0.4s $ease, background 0.5s $ease;
+  transition: border-color 0.4s var(--ease), background 0.5s var(--ease);
 
   &.scrolled {
     border-bottom-color: var(--line);
@@ -17,9 +17,9 @@
 }
 
 .barIn {
-  max-width: $max-width;
+  max-width: var(--maxw);
   margin: 0 auto;
-  padding: 14px $gutter;
+  padding: 14px var(--gutter);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -42,7 +42,7 @@
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 0 0 var(--accent);
-  animation: pulse 2.6s $ease infinite;
+  animation: pulse 2.6s var(--ease) infinite;
   flex-shrink: 0;
 
   @keyframes pulse {
@@ -53,9 +53,13 @@
 }
 
 .nav {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 28px;
+
+  @include respond-to('tablet') {
+    display: flex;
+  }
 
   a {
     color: var(--muted);
@@ -73,7 +77,7 @@
       background: var(--ink);
       transform: scaleX(0);
       transform-origin: left;
-      transition: transform 0.3s $ease;
+      transition: transform 0.3s var(--ease);
     }
 
     &:hover {
@@ -81,8 +85,6 @@
       &::after { transform: scaleX(1); }
     }
   }
-
-  @media (max-width: 780px) { display: none; }
 }
 
 .controls {
@@ -98,7 +100,7 @@
   overflow: hidden;
 
   button {
-    font-family: $font-mono;
+    font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: 0.1em;
     padding: 7px 12px;

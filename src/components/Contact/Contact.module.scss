@@ -1,35 +1,19 @@
-@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 .section {
   padding-bottom: 40px;
 }
 
 .wrap {
-  max-width: $max-width;
-  margin: 0 auto;
-  padding: 0 $gutter;
+  @include wrap;
 }
 
-.shead {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 24px;
-  padding-top: 96px;
-  margin-bottom: 44px;
-  flex-wrap: wrap;
-
-  h2 {
-    font-size: clamp(30px, 5vw, 58px);
-    letter-spacing: -0.03em;
-    line-height: 1;
-    font-weight: 700;
-    color: var(--ink);
-  }
+.sectionHeader {
+  @include sectionHead;
 }
 
-.num { color: var(--accent); }
-.idx { color: var(--faint); }
+.sectionNumber { color: var(--accent); }
+.sectionLabel  { color: var(--faint); }
 
 .lead {
   color: var(--muted);
@@ -37,7 +21,7 @@
   margin-bottom: 14px;
 }
 
-.big {
+.emailBig {
   font-size: clamp(28px, 8vw, 104px);
   font-weight: 700;
   letter-spacing: -0.04em;
@@ -58,7 +42,7 @@
       background: var(--accent);
       transform: scaleX(0);
       transform-origin: left;
-      transition: transform 0.45s $ease;
+      transition: transform 0.45s var(--ease);
     }
 
     &:hover::after {
@@ -67,14 +51,14 @@
   }
 }
 
-.clinks {
+.contactLinks {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 40px;
 }
 
-.clink {
+.contactLink {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -82,7 +66,7 @@
   border-radius: 999px;
   padding: 12px 18px;
   font-size: 15px;
-  transition: 0.25s $ease;
+  transition: 0.25s var(--ease);
   white-space: nowrap;
   color: var(--ink);
 
@@ -92,10 +76,10 @@
   }
 }
 
-.arr {
+.arrow {
   opacity: 0.4;
 
-  .clink:hover & {
+  .contactLink:hover & {
     opacity: 1;
   }
 }

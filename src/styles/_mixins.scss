@@ -1,0 +1,41 @@
+@use 'sass:map';
+@use './variables' as v;
+
+@mixin wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+@mixin sectionHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 96px;
+  margin-bottom: 44px;
+  flex-wrap: wrap;
+
+  h2 {
+    font-size: clamp(30px, 5vw, 58px);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--ink);
+  }
+}
+
+@mixin monoLabel {
+  color: var(--faint);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+@mixin respond-to($bp) {
+  @media (min-width: map.get(v.$breakpoints, $bp)) {
+    @content;
+  }
+}

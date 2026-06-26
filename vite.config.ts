@@ -10,6 +10,9 @@ export default defineConfig({
     },
   },
   css: {
+    modules: {
+      localsConvention: 'camelCaseOnly',
+    },
     preprocessorOptions: {
       scss: {
         api: 'modern-compiler',

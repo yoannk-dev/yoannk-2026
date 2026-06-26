@@ -1,14 +1,7 @@
-/* Design Tokens */
-
-$font-mono: 'JetBrains Mono', ui-monospace, monospace;
-
-/* Layout */
-$max-width: 1180px;
-$gutter: 32px;
-$ease: cubic-bezier(0.22, 0.61, 0.36, 1);
-
-/* Breakpoints */
-$bp-mobile: 680px;
-$bp-tablet: 760px;
-$bp-desktop: 820px;
-$bp-wide: 900px;
+// Breakpoints only — all design tokens live in :root (index.css)
+$breakpoints: (
+  'mobile':  680px,
+  'tablet':  760px,
+  'desktop': 820px,
+  'wide':    900px,
+);

@@ -10,22 +10,22 @@ export function Writing() {
     <section id="writing">
       <div className={styles.wrap}>
         <Reveal>
-          <div className={styles.shead}>
+          <div className={styles.sectionHeader}>
             <h2>
-              <span className={`${styles.num} mono`} style={{ fontSize: 13, verticalAlign: 'middle', marginRight: 14 }}>05</span>
+              <span className={`${styles.sectionNumber} mono`} style={{ fontSize: 13, verticalAlign: 'middle', marginRight: 14 }}>05</span>
               {/* {t.sections.writing} */}
             </h2>
-            <span className={`${styles.idx} mono`}>// writing</span>
+            <span className={`${styles.sectionLabel} mono`}>// writing</span>
           </div>
         </Reveal>
 
-        <Reveal as="p" delay={1} className={styles.pintro}>{t.writingIntro}</Reveal>
+        <Reveal as="p" delay={1} className={styles.intro}>{t.writingIntro}</Reveal>
 
-        <Reveal as="div" delay={1} className={styles.wlist}>
+        <Reveal as="div" delay={1} className={styles.articleList}>
           {WRITING.map((article, i) => (
-            <div className={styles.wrow} key={i}>
-              <div className={styles.t}>{article.title[locale]}</div>
-              <div className={styles.metaR}>
+            <div className={styles.articleRow} key={i}>
+              <div className={styles.title}>{article.title[locale]}</div>
+              <div className={styles.articleMeta}>
                 <span className={styles.tag}>{article.tag}</span>
                 <span className="mono">{t.soon}</span>
               </div>

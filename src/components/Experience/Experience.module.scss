@@ -1,31 +1,15 @@
-@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 .wrap {
-  max-width: $max-width;
-  margin: 0 auto;
-  padding: 0 $gutter;
+  @include wrap;
 }
 
-.shead {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 24px;
-  padding-top: 96px;
-  margin-bottom: 44px;
-  flex-wrap: wrap;
-
-  h2 {
-    font-size: clamp(30px, 5vw, 58px);
-    letter-spacing: -0.03em;
-    line-height: 1;
-    font-weight: 700;
-    color: var(--ink);
-  }
+.sectionHeader {
+  @include sectionHead;
 }
 
-.num { color: var(--accent); }
-.idx { color: var(--faint); }
+.sectionNumber { color: var(--accent); }
+.sectionLabel  { color: var(--faint); }
 
 .xpRow {
   display: grid;
@@ -33,13 +17,13 @@
   gap: 4px;
   padding: 28px 0;
   border-top: 1px solid var(--line);
-  transition: padding 0.3s $ease;
+  transition: padding 0.3s var(--ease);
 
   &:last-child {
     border-bottom: 1px solid var(--line);
   }
 
-  @media (min-width: $bp-wide) {
+  @include respond-to('wide') {
     grid-template-columns: 170px 1fr;
     gap: 0 40px;
 
@@ -49,11 +33,11 @@
   }
 }
 
-.yr {
+.period {
   color: var(--muted);
   margin-bottom: 6px;
 
-  @media (min-width: $bp-wide) {
+  @include respond-to('wide') {
     grid-row: 1 / 5;
     padding-top: 6px;
     margin-bottom: 0;
@@ -68,26 +52,26 @@
   color: var(--ink);
 }
 
-.co {
+.company {
   color: var(--accent-ink);
   display: inline-flex;
   align-items: center;
   gap: 7px;
   width: fit-content;
 
-  &:hover .arr {
+  &:hover .arrow {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
-.arr {
+.arrow {
   opacity: 0;
   transform: translateX(-4px);
-  transition: 0.25s $ease;
+  transition: 0.25s var(--ease);
 }
 
-.dsc {
+.description {
   color: var(--muted);
   max-width: 70ch;
   margin-top: 6px;
@@ -100,13 +84,13 @@
   gap: 8px;
   margin-top: 14px;
 
-  @media (min-width: $bp-wide) {
+  @include respond-to('wide') {
     grid-column: 2;
   }
 }
 
 .tag {
-  font-family: $font-mono;
+  font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.04em;
   padding: 6px 11px;
