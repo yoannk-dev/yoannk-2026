@@ -21,8 +21,6 @@
   }
 }
 
-/* ---------- eyebrow ---------- */
-
 .eyebrow {
   display: flex;
   flex-direction: column;
@@ -59,8 +57,6 @@
   box-shadow: 0 0 0 3px color-mix(in srgb, #2ec16b 22%, transparent);
 }
 
-/* ---------- name & statement ---------- */
-
 .name {
   font-size: clamp(54px, 12vw, 158px);
   line-height: 0.92;
@@ -87,8 +83,6 @@
     font-weight: 700;
   }
 }
-
-/* ---------- CTA buttons ---------- */
 
 .heroActions {
   display: flex;
@@ -137,8 +131,6 @@
   transition: transform 0.25s $ease;
 }
 
-/* ---------- side panel ---------- */
-
 .heroSidePanel {
   display: flex;
   flex-wrap: wrap;
@@ -154,8 +146,6 @@
     padding-left: 40px;
   }
 }
-
-/* ---------- stats ---------- */
 
 .monoLabel {
   color: var(--faint);
