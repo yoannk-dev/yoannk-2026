@@ -26,11 +26,11 @@ React 18 + TypeScript + Vite personal portfolio site.
 - `hooks/` — Custom React hooks (`useLocale.ts`, `useScrollReveal.ts`, `useTheme.ts`)
 - `i18n/` — Internationalisation: `localeContext.ts` (context shape), `localise.ts` (helper), `translations.ts` (fr/en strings)
 - `types/` — Shared TypeScript type definitions (`locale.ts`)
-- `styles/_variables.scss` — SCSS design tokens/variables
+- `assets/styles/` — SCSS partials: `_variables.scss` (design tokens), `_mixins.scss` (shared mixins), `_reset.scss` (global reset), `_reveal.scss` (scroll-reveal animation), `_hero-load.scss` (hero entrance animation)
 
 **Path alias:** `@` resolves to `./src` (configured in both `vite.config.ts` and `tsconfig.app.json`).
 
-**Styling:** SCSS modules (`.module.scss`) per component; global reset and font in `src/index.css`; design tokens in `src/styles/_variables.scss`.
+**Styling:** SCSS modules (`.module.scss`) per component; global entry point is `src/index.scss` (fonts, tokens, theme); shared partials in `src/assets/styles/` loaded via `@use`; component SCSS modules import mixins with `@use '../../assets/styles/mixins' as *`.
 
 **i18n:** Two locales (`fr` | `en`). `LocaleProvider` stores the active locale in `localStorage` (`yk-lang`). Use the `useLocale()` hook to access `{ locale, toggle, t }` anywhere in the tree. The `localise()` helper resolves a `string | Record<Locale, string>` to the active language.
 
