@@ -1,15 +1,15 @@
 # yoann-k.com
 
-My personal portfolio website — built with React 18, TypeScript, and Vite.
+My personal portfolio website — built with React 19, TypeScript, and Vite.
 
 ## Tech stack
 
-- **Framework:** React 18 + TypeScript
-- **Build tool:** Vite 5
+- **Framework:** React 19 + TypeScript
+- **Build tool:** Vite 8
 - **Styling:** SCSS Modules + design tokens (`src/styles/_variables.scss`)
 - **i18n:** Custom context-based solution, two locales (`fr` / `en`), persisted in `localStorage`
 - **Theme:** Dark / light toggle, persisted in `localStorage`, applied as `data-theme` on `<html>`
-- **Testing:** Vitest 3 + Testing Library + jsdom
+- **Testing:** Vitest 4 + Testing Library + jsdom
 - **Package manager:** pnpm
 
 ## Getting started

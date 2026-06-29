@@ -50,11 +50,11 @@ To mark words as bold inside a translated string, wrap them with `**word**` (e.g
 
 ## Testing
 
-**Stack:** Vitest 3 + jsdom + `@testing-library/react` + `@testing-library/user-event` + `@testing-library/jest-dom`.
+**Stack:** Vitest 4 + jsdom + `@testing-library/react` + `@testing-library/user-event` + `@testing-library/jest-dom`.
 
 **Test files:** co-located `*.test.tsx` next to each component/hook. No snapshots — behavior only.
 
-**Coverage:** 11 test files, 75 tests across all page-section components and hooks.
+**Coverage:** 11 test files, 74 tests across all page-section components and hooks.
 
 **Shared helper:** `src/test/helpers.tsx` exports `renderWithProviders(ui, { locale })` — wraps in `<LocaleProvider>` and seeds `localStorage` before render to control locale.
 
