@@ -12,7 +12,7 @@ export function Writing() {
         <Reveal>
           <div className={styles.sectionHeader}>
             <h2>
-              <span className={`${styles.sectionNumber} mono`} style={{ fontSize: 13, verticalAlign: 'middle', marginRight: 14 }}>05</span>
+              <span className={`${styles.sectionNumber} mono`}>05</span>
               {/* {t.sections.writing} */}
             </h2>
             <span className={`${styles.sectionLabel} mono`}>// writing</span>

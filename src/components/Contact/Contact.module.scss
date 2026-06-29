@@ -12,8 +12,15 @@
   @include sectionHead;
 }
 
-.sectionNumber { color: var(--accent); }
+.sectionNumber {
+  color: var(--accent);
+  font-size: 13px;
+  vertical-align: middle;
+  margin-right: 14px;
+}
 .sectionLabel  { color: var(--faint); }
+
+.contactLinkLabel { color: var(--faint); }
 
 .lead {
   color: var(--muted);

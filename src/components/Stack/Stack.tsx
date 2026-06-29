@@ -12,7 +12,7 @@ export default function Stack() {
         <Reveal>
           <div className={styles.sectionHeader}>
             <h2>
-              <span className={`${styles.sectionNumber} mono`} style={{ fontSize: 13, verticalAlign: 'middle', marginRight: 14 }}>03</span>
+              <span className={`${styles.sectionNumber} mono`}>03</span>
               {t.sections.stack}
             </h2>
             <span className={`${styles.sectionLabel} mono`}>// stack</span>

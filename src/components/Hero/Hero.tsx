@@ -31,8 +31,8 @@ export default function Hero() {
             </div>
 
             <h1 className={styles.name}>
-              <span className="hl a2" style={{ display: 'block' }}>Yoann</span>
-              <span className={`${styles.nameSurname} hl a3`} style={{ display: 'block' }}>Kermet</span>
+              <span className="hl a2">Yoann</span>
+              <span className={`${styles.nameSurname} hl a3`}>Kermet</span>
             </h1>
 
             <p className={`${styles.statement} hl a4`}>
@@ -58,7 +58,7 @@ export default function Hero() {
             ))}
             <div className={styles.statBlock}>
               <div className={styles.monoLabel}>{t.now}</div>
-              <div className={`${styles.statValue} mono`} style={{ letterSpacing: '.1em' }}><Clock /></div>
+              <div className={`${styles.statValue} ${styles.clockValue} mono`}><Clock /></div>
             </div>
           </div>
         </div>

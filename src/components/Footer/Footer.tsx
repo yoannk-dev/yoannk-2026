@@ -10,7 +10,7 @@ export default function Footer() {
       <div className={styles.wrap}>
         <div className={styles.foot}>
           <span className="mono">© {new Date().getFullYear()} Yoann Kermet — {t.rights}</span>
-          <span className="mono" style={{ textTransform: 'none', letterSpacing: '.04em' }}>{t.colophon}</span>
+          <span className={`mono ${styles.colophon}`}>{t.colophon}</span>
           <a className={styles.totop} href="#top">
             <Arrow /> {t.backTop}
           </a>

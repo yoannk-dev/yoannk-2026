@@ -40,6 +40,10 @@ To mark words as bold inside a translated string, wrap them with `**word**` (e.g
 
 **TypeScript:** Strict mode enabled; `noUnusedLocals` and `noUnusedParameters` are enforced — clean up unused code before building.
 
+## Coding rules
+
+**No inline styles in JSX.** Never use `style={{ ... }}` on JSX elements. All styles must live in the component's `.module.scss` file as named classes. If a style variant is needed, add a dedicated class (e.g. `.companyMuted`, `.clockValue`) and apply it via `className`.
+
 ## Testing
 
 **Stack:** Vitest 3 + jsdom + `@testing-library/react` + `@testing-library/user-event` + `@testing-library/jest-dom`.

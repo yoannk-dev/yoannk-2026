@@ -13,7 +13,7 @@ export default function Projects() {
         <Reveal>
           <div className={styles.sectionHeader}>
             <h2>
-              <span className={`${styles.sectionNumber} mono`} style={{ fontSize: 13, verticalAlign: 'middle', marginRight: 14 }}>04</span>
+              <span className={`${styles.sectionNumber} mono`}>04</span>
               {t.sections.projects}
             </h2>
             <span className={`${styles.sectionLabel} mono`}>// projects</span>

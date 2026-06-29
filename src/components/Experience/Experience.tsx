@@ -13,7 +13,7 @@ export default function Experience() {
         <Reveal>
           <div className={styles.sectionHeader}>
             <h2>
-              <span className={`${styles.sectionNumber} mono`} style={{ fontSize: 13, verticalAlign: 'middle', marginRight: 14 }}>02</span>
+              <span className={`${styles.sectionNumber} mono`}>02</span>
               {t.sections.work}
             </h2>
             <span className={`${styles.sectionLabel} mono`}>// experience</span>
@@ -27,7 +27,7 @@ export default function Experience() {
               <div className={styles.role}>{job.role[locale]}</div>
               {job.url
                 ? <a className={styles.company} href={job.url} target="_blank" rel="noopener">{job.company}<Arrow className={styles.arrow} /></a>
-                : <div className={styles.company} style={{ color: 'var(--muted)' }}>{job.company}</div>}
+                : <div className={`${styles.company} ${styles.companyMuted}`}>{job.company}</div>}
               <div className={styles.description}>{job.description[locale]}</div>
               <div className={styles.tags}>
                 {job.tags.map((tag) => (

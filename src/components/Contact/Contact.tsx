@@ -16,7 +16,7 @@ export default function Contact() {
         <Reveal>
           <div className={styles.sectionHeader}>
             <h2>
-              <span className={`${styles.sectionNumber} mono`} style={{ fontSize: 13, verticalAlign: 'middle', marginRight: 14 }}>06</span>
+              <span className={`${styles.sectionNumber} mono`}>06</span>
               {t.sections.contact}
             </h2>
             <span className={`${styles.sectionLabel} mono`}>// contact</span>
@@ -31,7 +31,7 @@ export default function Contact() {
           <div className={styles.contactLinks}>
             {CONTACT_ROWS.filter((row) => row.href).map((row, i) => (
               <a className={styles.contactLink} key={i} href={row.href} target={row.href.startsWith('mailto') ? undefined : '_blank'} rel="noopener noreferrer">
-                <span className="mono" style={{ color: 'var(--faint)' }}>{localise(row.label, locale)}</span>
+                <span className={`mono ${styles.contactLinkLabel}`}>{localise(row.label, locale)}</span>
                 {row.value}<Arrow className={styles.arrow} />
               </a>
             ))}
