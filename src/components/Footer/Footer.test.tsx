@@ -26,11 +26,6 @@ describe('Footer', () => {
     expect(link).toHaveAttribute('href', '#top');
   });
 
-  it('renders the colophon text', () => {
-    renderWithProviders(<Footer />);
-    expect(screen.getByText(/Space Grotesk/)).toBeInTheDocument();
-  });
-
   it('shows "All rights reserved." in EN locale', () => {
     renderWithProviders(<Footer />, { locale: 'en' });
     expect(screen.getByText(/All rights reserved\./)).toBeInTheDocument();

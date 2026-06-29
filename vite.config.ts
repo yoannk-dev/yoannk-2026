@@ -13,11 +13,6 @@ export default defineConfig({
     modules: {
       localsConvention: 'camelCaseOnly',
     },
-    preprocessorOptions: {
-      scss: {
-        api: 'modern-compiler',
-      },
-    },
   },
   test: {
     environment: 'jsdom',
