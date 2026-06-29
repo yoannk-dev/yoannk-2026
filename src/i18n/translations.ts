@@ -167,7 +167,7 @@ export const STACK_GROUPS = [
 ];
 
 export const PROJECTS = [
-  { name: { fr: 'Vinyles', en: 'Vinyles' }, blurb: { fr: 'Une application de suivi de collection de disques vinyles personnelle conçue avec Rails 8.1', en: 'A personal vinyl record collection tracker built with Rails 8.1' }, href: 'https://vinyles.yoann-k.com/', img: "/projects/vinyles.jpg" },
+  { name: { fr: 'Vinyles', en: 'Vinyles' }, blurb: { fr: 'Une application de gestion de collection de vinyles personnelle, développée en Rails 8.1', en: 'A personal vinyl record collection tracker built with Rails 8.1' }, href: 'https://vinyles.yoann-k.com/', img: "/projects/vinyles.jpg" },
   { name: { fr: 'Gambit', en: 'Gambit' }, blurb: { fr: 'Lancez-vous dans une partie d\'échecs à deux, en vrai. (Utilisez un téléphone ou une tablette)', en: 'Get into a game of chess for two, in the real life. (Use a phone or a tablet)' }, href: 'https://chess.yoann-k.com/', img: "/projects/gambit.jpg" },
   { name: { fr: 'TS Fullstack Starter', en: 'TS Fullstack Starter' }, blurb: { fr: 'Monorepo TypeScript avec Next.js, tRPC, Prisma, Tailwind CSS, Turborepo et pnpm', en: 'TypeScript monorepo boilerplate with Next.js, tRPC, Prisma, Tailwind CSS, Turborepo & pnpm workspaces' }, href: 'https://github.com/yoannk-dev/ts-fullstack-starter', img: "/projects/starter.jpg" },
   { name: { fr: 'Drouot.immo', en: 'Drouot.immo' }, blurb: { fr: 'Une plateforme responsive construite de zéro, une architecture front-end scalable et maintenable. Enchères en direct', en: 'A responsive platform built from scratch, a scalable front-end architecture. Live Auction.' }, href: 'https://drouot.immo', img: "/projects/drouot-immo.jpg" },
