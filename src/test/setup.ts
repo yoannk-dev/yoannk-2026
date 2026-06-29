@@ -21,3 +21,20 @@ vi.stubGlobal('matchMedia', vi.fn().mockImplementation((query: string) => ({
   addEventListener: vi.fn(),
   removeEventListener: vi.fn(),
 })));
+
+HTMLCanvasElement.prototype.getContext = vi.fn().mockReturnValue({
+  clearRect: vi.fn(),
+  drawImage: vi.fn(),
+  getImageData: vi.fn().mockReturnValue({ data: new Uint8ClampedArray() }),
+  putImageData: vi.fn(),
+  createImageData: vi.fn(),
+  scale: vi.fn(),
+  fillRect: vi.fn(),
+  fillText: vi.fn(),
+  beginPath: vi.fn(),
+  arc: vi.fn(),
+  fill: vi.fn(),
+  clip: vi.fn(),
+  save: vi.fn(),
+  restore: vi.fn(),
+});
