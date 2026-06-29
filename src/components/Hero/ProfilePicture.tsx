@@ -17,6 +17,7 @@ export function ProfilePicture() {
   const rafRef = useRef<number>(0);
   const pixelSizeRef = useRef(PIXEL_SIZE_MAX);
   const targetRef = useRef(PIXEL_SIZE_MAX);
+  const animatePixelsRef = useRef<() => void>(() => {});
 
   const render = useCallback((size: number) => {
     const ctx = ctxRef.current;
@@ -48,8 +49,12 @@ export function ProfilePicture() {
     }
     pixelSizeRef.current += diff * 0.16;
     render(pixelSizeRef.current);
-    rafRef.current = requestAnimationFrame(animatePixels);
+    rafRef.current = requestAnimationFrame(animatePixelsRef.current);
   }, [render]);
+
+  useEffect(() => {
+    animatePixelsRef.current = animatePixels;
+  }, [animatePixels]);
 
   useEffect(() => {
     ctxRef.current = canvasRef.current!.getContext('2d');
